@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="Use Binary Search to find the first/last element with a property in a sorted array. l: lower_boundh: upper_bound 123456789101112131415161718while (l &amp;lt; h) &amp;#123;    // first element    m_l = l + (h">
+<meta name="description" content="Use Binary Search to find the first/last element with a property in a sorted array. l: lower_boundh: upper_bound to find the exact position: h = size - 1to find position to insert: h = size 1234567891">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Binary Search Framework">
 <meta property="og:url" content="http://fr42k.github.io/2017/10/12/BinarySearchFramework/index.html">
 <meta property="og:site_name" content="Yunjie Wang">
-<meta property="og:description" content="Use Binary Search to find the first/last element with a property in a sorted array. l: lower_boundh: upper_bound 123456789101112131415161718while (l &amp;lt; h) &amp;#123;    // first element    m_l = l + (h">
+<meta property="og:description" content="Use Binary Search to find the first/last element with a property in a sorted array. l: lower_boundh: upper_bound to find the exact position: h = size - 1to find position to insert: h = size 1234567891">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-12T04:38:20.000Z">
+<meta property="og:updated_time" content="2018-01-14T23:00:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Binary Search Framework">
-<meta name="twitter:description" content="Use Binary Search to find the first/last element with a property in a sorted array. l: lower_boundh: upper_bound 123456789101112131415161718while (l &amp;lt; h) &amp;#123;    // first element    m_l = l + (h">
+<meta name="twitter:description" content="Use Binary Search to find the first/last element with a property in a sorted array. l: lower_boundh: upper_bound to find the exact position: h = size - 1to find position to insert: h = size 1234567891">
 
 
 
@@ -356,6 +356,7 @@
       
         <p>Use Binary Search to find the first/last element with a property in a sorted array.</p>
 <p>l: lower_bound<br>h: upper_bound</p>
+<p>to find the exact position: h = size - 1<br>to find position to insert: h = size</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">while (l &lt; h) &#123;</div><div class="line">    // first element</div><div class="line">    m_l = l + (h - l) / 2</div><div class="line">    if (!Satisfy(m_l)) &#123;</div><div class="line">        l = m + 1</div><div class="line">    &#125; else &#123;</div><div class="line">        h = m</div><div class="line">    &#125;</div><div class="line">    /*</div><div class="line">    // last element</div><div class="line">    m_h = l + (h - l) / 2 + 1</div><div class="line">    if (!Satisfy(m_h)) &#123;</div><div class="line">        h = m - 1</div><div class="line">    &#125; else &#123;</div><div class="line">        l = m</div><div class="line">    &#125;</div><div class="line">    */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>The idea is that if the mid point satisfies a property, then keep the opposite bound of round at mid, otherwise move the corresponding bound toward mid exceed 1.<br>Finally its true that <code>l == h</code></p>
 
