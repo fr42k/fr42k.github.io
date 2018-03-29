@@ -291,6 +291,124 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/03/28/gscale/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunjie Wang (fr42k)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yunjie Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/28/gscale/" itemprop="url">Paper Note of gScale</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-28T23:33:42-05:00">
+                2018-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Title: gScale: Scaling up GPU Virtualization with Dynamic Sharing of Graphics Memory Space</p>
+<p>Topic: a state of art solution about improve the scaling ability of GPU Virtualization</p>
+<p>Idea: analyze the bottleneck of gVirt that fixed size resource partition limits the vGPU instances, based on gVirt, come up with the idea that give each vGPU a private shadow graphics translation table (GTT) to share the high physical graphic memory and synchronize only when the instance is rendering and use on-demand copy to reduce cost, share the low graphic memory by using Extended<br>Page Table (EPT) to establish a mapping relation from guest physical address and host physical address then link those directly so that CPU can access the host memory without using global graphic memory, use a part of low graphic memory and apply dynamic management to serve fence register, divide the high graphic memory to slots which can be shared by vGPU and avoid context switch for idle vGPU to handle many vGPU.</p>
+<p>Contribution: an open-source GPU Virtualization solution that can reach the state of the art standar</p>
+<p>Intellectual merit: a private shadow GTT to share high graphic memory, a mechanism named ladder mapping to share low graphic memory, use fence memory space pool to solve the invalid fence register problem caused by ladder mapping, and use slot sharing to reduce cost when launched many vGPU</p>
+<p>Strengths: clear logic that analyze the bottleneck of gVirt and give improve ideas step by step</p>
+<p>Weakness: not so clearly illustrate the ladder mapping idea via example</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/03/22/EvaluationDNonHPC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1140,7 +1258,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

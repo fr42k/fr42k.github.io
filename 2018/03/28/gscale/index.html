@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="GPGPU," />
 
 
 
@@ -93,16 +93,18 @@
 
 
 
-<meta name="description" content="A human&apos;s fate should be certainly concerned with his efforts, meanwhile should be connected with the historical process.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yunjie Wang">
-<meta property="og:url" content="http://fr42k.github.io/archives/2017/07/index.html">
+<meta name="description" content="Title: gScale: Scaling up GPU Virtualization with Dynamic Sharing of Graphics Memory Space Topic: a state of art solution about improve the scaling ability of GPU Virtualization Idea: analyze the bott">
+<meta name="keywords" content="GPGPU">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Paper Note of gScale">
+<meta property="og:url" content="http://fr42k.github.io/2018/03/28/gscale/index.html">
 <meta property="og:site_name" content="Yunjie Wang">
-<meta property="og:description" content="A human&apos;s fate should be certainly concerned with his efforts, meanwhile should be connected with the historical process.">
+<meta property="og:description" content="Title: gScale: Scaling up GPU Virtualization with Dynamic Sharing of Graphics Memory Space Topic: a state of art solution about improve the scaling ability of GPU Virtualization Idea: analyze the bott">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-03-29T05:45:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yunjie Wang">
-<meta name="twitter:description" content="A human&apos;s fate should be certainly concerned with his efforts, meanwhile should be connected with the historical process.">
+<meta name="twitter:title" content="Paper Note of gScale">
+<meta name="twitter:description" content="Title: gScale: Scaling up GPU Virtualization with Dynamic Sharing of Graphics Memory Space Topic: a state of art solution about improve the scaling ability of GPU Virtualization Idea: analyze the bott">
 
 
 
@@ -130,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://fr42k.github.io/archives/2017/07/"/>
+  <link rel="canonical" href="http://fr42k.github.io/2018/03/28/gscale/"/>
 
 
 
 
 
-  <title>Archive | Yunjie Wang</title>
+  <title>Paper Note of gScale | Yunjie Wang</title>
   
 
 
@@ -161,7 +163,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -279,103 +281,177 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      Um..! 8 posts in total. Keep on posting.
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/20/Mathematical-Aspects-of-DL/" itemprop="url">
-              
-                <span itemprop="name">Mathematical_Aspects_of_DL</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-20T21:39:15-05:00"
-              content="2017-07-20" >
-          07-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/19/Hello World/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-19T07:03:04-05:00"
-              content="2017-07-19" >
-          07-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/03/28/gscale/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunjie Wang (fr42k)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yunjie Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Paper Note of gScale</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-28T23:33:42-05:00">
+                2018-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Title: gScale: Scaling up GPU Virtualization with Dynamic Sharing of Graphics Memory Space</p>
+<p>Topic: a state of art solution about improve the scaling ability of GPU Virtualization</p>
+<p>Idea: analyze the bottleneck of gVirt that fixed size resource partition limits the vGPU instances, based on gVirt, come up with the idea that give each vGPU a private shadow graphics translation table (GTT) to share the high physical graphic memory and synchronize only when the instance is rendering and use on-demand copy to reduce cost, share the low graphic memory by using Extended<br>Page Table (EPT) to establish a mapping relation from guest physical address and host physical address then link those directly so that CPU can access the host memory without using global graphic memory, use a part of low graphic memory and apply dynamic management to serve fence register, divide the high graphic memory to slots which can be shared by vGPU and avoid context switch for idle vGPU to handle many vGPU.</p>
+<p>Contribution: an open-source GPU Virtualization solution that can reach the state of the art standar</p>
+<p>Intellectual merit: a private shadow GTT to share high graphic memory, a mechanism named ladder mapping to share low graphic memory, use fence memory space pool to solve the invalid fence register problem caused by ladder mapping, and use slot sharing to reduce cost when launched many vGPU</p>
+<p>Strengths: clear logic that analyze the bottleneck of gVirt and give improve ideas step by step</p>
+<p>Weakness: not so clearly illustrate the ladder mapping idea via example</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/GPGPU/" rel="tag"># GPGPU</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/22/EvaluationDNonHPC/" rel="next" title="Paper Note of EvaluationDLonHPC">
+                <i class="fa fa-chevron-left"></i> Paper Note of EvaluationDLonHPC
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -383,6 +459,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -570,11 +650,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   
