@@ -291,6 +291,242 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/03/30/APRES/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunjie Wang (fr42k)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yunjie Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/30/APRES/" itemprop="url">Paper Note of APRES</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-30T02:35:42-05:00">
+                2018-03-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Title: APRES: Improving Cache Efficiency by Exploiting Load Characteristics on GPUs</p>
+<p>Topic: Analyze the situation of data cache and improve GPU L1 cache performance based on group warp priority with prefetch to enhance cache reuse</p>
+<p>Idea: Based on the locality of data usage, Locality Aware Warp Scheduler (LAWS) group warps who share last load PC and set priority to do greedy manage, store all global memory load on Last Load Table, put the grouping information in Warp Group Table and schedule execute order by the Load Store Unit (LSU) and Scheduling Aware Prefetching (SAP), who would put the missing warp at low priority and ask LAWS to give high priority to the prefetch warp for that missing group, with stored previous load and warp ID in the missing group.</p>
+<p>Contribution: Analysis of load instructions on GPU and a mechanism named APRES that combine grouping warp to execute with priority and prefetching.</p>
+<p>Intellectual merit: Figure out the locality of cache utilization and opportunity to prefetch, proposed dedicated mechanism aimed at GPU L1 cache optimization based on the observation: LAWS group warps to do priority management, SAP change missing warp to the end and do prefetch.</p>
+<p>Strengths: Detailed legends as examples to illustrate the mechanism</p>
+<p>Weakness: Performance may limited because of simulation and no real GPU environment</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/03/29/APCM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunjie Wang (fr42k)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yunjie Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/29/APCM/" itemprop="url">Paper Note of APCM</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-29T10:14:07-05:00">
+                2018-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Title: Access Pattern-Aware Cache Management for Improving Data Utilization in GPU</p>
+<p>Topic: A mechanism to improve GPU performance based on data usage pattern</p>
+<p>Idea: The design of GPU memory hierarchy not support well for warp, previous warp-level cache mechanisms are too coarse that streaming cannot benefit and some instructions with strong temporal locality are forced to bypass. Detect locality data type by monitoring per load exemplar warp and use cache tag array to track data sharing, then use different strategies for the according locality data types, make corresponding hardware design to support the mechanism. For streaming type bypass the L1 cache and directly use L2, for inter-warp utilize the LRU stategy, for intra-warp use a protection algorithm that estimate the lifespan of data to utilize the locality until mostly end the reuse.</p>
+<p>Contribution: Analysis of the weakness of previous GPU cache management. Proposed a hardware based solution for improve GPU L1 cache performance.</p>
+<p>Intellectual merit: Use the notion of access pattern similarity (APS) to measure the consistency of access patterns. Analysis the locality data type for per-load level optimization. Use a protection algorithm for utilize the dominant intra-warp locality.</p>
+<p>Strengths: Clearly illustrate the strategies and design for APCM, detailed experiments to show the performance.</p>
+<p>Weakness: Heuristic based that the locality data types tend to not change.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/03/28/gscale/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -361,7 +597,7 @@
           
             <p>Title: gScale: Scaling up GPU Virtualization with Dynamic Sharing of Graphics Memory Space</p>
 <p>Topic: a state of art solution about improve the scaling ability of GPU Virtualization</p>
-<p>Idea: analyze the bottleneck of gVirt that fixed size resource partition limits the vGPU instances, based on gVirt, come up with the idea that give each vGPU a private shadow graphics translation table (GTT) to share the high physical graphic memory and synchronize only when the instance is rendering and use on-demand copy to reduce cost, share the low graphic memory by using Extended<br>Page Table (EPT) to establish a mapping relation from guest physical address and host physical address then link those directly so that CPU can access the host memory without using global graphic memory, use a part of low graphic memory and apply dynamic management to serve fence register, divide the high graphic memory to slots which can be shared by vGPU and avoid context switch for idle vGPU to handle many vGPU.</p>
+<p>Idea: analyze the bottleneck of gVirt that fixed size resource partition limits the vGPU instances, based on gVirt, come up with the idea that give each vGPU a private shadow graphics translation table (GTT) to share the high physical graphic memory and synchronize only when the instance is rendering and use on-demand copy to reduce cost, share the low graphic memory by using Extended Page Table (EPT) to establish a mapping relation from guest physical address and host physical address then link those directly so that CPU can access the host memory without using global graphic memory, use a part of low graphic memory and apply dynamic management to serve fence register, divide the high graphic memory to slots which can be shared by vGPU and avoid context switch for idle vGPU to handle many vGPU.</p>
 <p>Contribution: an open-source GPU Virtualization solution that can reach the state of the art standar</p>
 <p>Intellectual merit: a private shadow GTT to share high graphic memory, a mechanism named ladder mapping to share low graphic memory, use fence memory space pool to solve the invalid fence register problem caused by ladder mapping, and use slot sharing to reduce cost when launched many vGPU</p>
 <p>Strengths: clear logic that analyze the bottleneck of gVirt and give improve ideas step by step</p>
@@ -1258,7 +1494,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
