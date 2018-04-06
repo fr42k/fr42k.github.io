@@ -291,7 +291,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/VGMM/">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/ASAT/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yunjie Wang (fr42k)">
@@ -310,7 +310,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/05/VGMM/" itemprop="url">Paper Note of VGMM</a></h1>
+                <a class="post-title-link" href="/2018/04/05/ASAT/" itemprop="url">Paper Note of ASAT</a></h1>
         
 
         <div class="post-meta">
@@ -359,9 +359,11 @@
       
         
           
-            <p>Title: Vulnerable GPU Memory Management: Towards Recovering Raw Data from GPU</p>
-<p>Topic: The security issue of Heterogeneous architecture from GPU memory management and algorighm to recover data from residue.</p>
-<p>Idea: </p>
+            <p>Title: Architectural Support for Address Translation on GPUs</p>
+<p>Topic: explore GPU Memory Management Units (MMUs) consisting of Translation Lookaside Buffers (TLBs) and page table walkers (PTWs), analyze current technology and propose augments</p>
+<p>Idea: In Heterogeneous Systems Architecture, the uniform virtual address of GPU/CPU memory can provide programming benefits and need efficient hardware, GPU’s warp-based execution model plays an important role. Using CPU-like MMU design would hurt GPU performance, they explored cache-conscious warp/wavefront scheduling for MMU design and how TLB affects dynamic warp formation. They explored and propose methods in 3 aspects: Address Translation for GPU, Cache Conscious Warp Scheduling, thread block compaction.</p>
+<p>The benefit of their work: remove need of CPU to handle GPU MMU, support multi-context and support application libraries.</p>
+<p>General sight: Default warp scheduling would break temporal locality, sophisticated warp scheduling would loss effectiveness.</p>
 
           
         
@@ -520,7 +522,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/ASAT/">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/VGMM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yunjie Wang (fr42k)">
@@ -539,7 +541,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/05/ASAT/" itemprop="url">Paper Note of ASAT</a></h1>
+                <a class="post-title-link" href="/2018/04/05/VGMM/" itemprop="url">Paper Note of VGMM</a></h1>
         
 
         <div class="post-meta">
@@ -588,11 +590,9 @@
       
         
           
-            <p>Title: Architectural Support for Address Translation on GPUs</p>
-<p>Topic: explore GPU Memory Management Units (MMUs) consisting of Translation Lookaside Buffers (TLBs) and page table walkers (PTWs), analyze current technology and propose augments</p>
-<p>Idea: In Heterogeneous Systems Architecture, the uniform virtual address of GPU/CPU memory can provide programming benefits and need efficient hardware, GPU’s warp-based execution model plays an important role. Using CPU-like MMU design would hurt GPU performance, they explored cache-conscious warp/wavefront scheduling for MMU design and how TLB affects dynamic warp formation. They explored and propose methods in 3 aspects: Address Translation for GPU, Cache Conscious Warp Scheduling, thread block compaction.</p>
-<p>The benefit of their work: remove need of CPU to handle GPU MMU, support multi-context and support application libraries.</p>
-<p>General sight: Default warp scheduling would break temporal locality, sophisticated warp scheduling would loss effectiveness.</p>
+            <p>Title: Vulnerable GPU Memory Management: Towards Recovering Raw Data from GPU</p>
+<p>Topic: The security issue of Heterogeneous architecture from GPU memory management and algorighm to recover data from residue.</p>
+<p>Idea: Analyze the weakness of HSA data security from GPU perspective, provide an algorighm that could recover image from GPU residue across the multiuser OS and Cloud computing, in 3 steps: get tilt, utilize the local similarity to idetify the size of image and remove leading blocks.</p>
 
           
         
