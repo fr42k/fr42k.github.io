@@ -252,6 +252,255 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/03/20/paperNoteofDeepMon/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunjie Wang (fr42k)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yunjie Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/20/paperNoteofDeepMon/" itemprop="url">Paper Note of DeepMon</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-20T22:32:44-05:00">
+                2018-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Title: DeepMon: Mobile GPU-based Deep Learning Framework for Continuous Vision Applications</p>
+<p>Topic: Reduce deep learning applications’ latency on mobile devices.</p>
+<p>Idea: Utilize GPU of mobile device, convert deep learning model, store metadata on host mem and parameters on device mem, cache first N conv layers’ output and refresh based on a histogram similarity policy, decompose conv parameters from one tensor to 3 small tensors, optimize conv operations via try unfolding &amp; half float, propose multi kernels to fit different mobile GPU.</p>
+<p>Contribution: A toolkit DeepMon that runs deep learning applications on commodity mobile with low latency, implemented with OpenCL and Vulkan</p>
+<p>Intellectual merit: Proposed optimization methods to reduce latency without significantly loss performance, without offload to other powerful servers via server-client mode and save energy.</p>
+<p>Strengths: Detailed observation &amp; experiments on every step. For example when choosing number of bins at caching step, they set a lot of experiments to draw graph to see how the performance change.</p>
+<p>Weakness: No enough guidance for dl developers who wants to make mobile apps: training/testing VGG and YOLO on different datasets</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2017/10/12/BinarySearchFramework/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunjie Wang (fr42k)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yunjie Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/12/BinarySearchFramework/" itemprop="url">Binary Search Framework</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-12T13:12:44-05:00">
+                2017-10-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Use Binary Search to find the first/last element with a property in a sorted array.</p>
+<p>l: first position in your consideration<br>h: last position in your consideration, even can larger than the last index of the array</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">while (l &lt; h) &#123;</div><div class="line">    // first element</div><div class="line">    m_l = l + (h - l) / 2</div><div class="line">    if (!Satisfy(m_l)) &#123;</div><div class="line">        l = m + 1</div><div class="line">    &#125; else &#123;</div><div class="line">        h = m</div><div class="line">    &#125;</div><div class="line">    /*</div><div class="line">    // last element</div><div class="line">    m_h = l + (h - l) / 2 + 1</div><div class="line">    if (!Satisfy(m_h)) &#123;</div><div class="line">        h = m - 1</div><div class="line">    &#125; else &#123;</div><div class="line">        l = m</div><div class="line">    &#125;</div><div class="line">    */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The idea is that if the mid point satisfies a property, then keep the opposite bound of round at mid, otherwise move the corresponding bound toward mid exceed 1.<br>Finally its true that <code>l == h</code></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2017/08/29/InstallKaldiinOSX/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -656,7 +905,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
