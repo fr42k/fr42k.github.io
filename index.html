@@ -500,7 +500,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/pps/">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/ASAT/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yunjie Wang (fr42k)">
@@ -519,7 +519,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/05/pps/" itemprop="url">Paper Note of PPS</a></h1>
+                <a class="post-title-link" href="/2018/04/05/ASAT/" itemprop="url">Paper Note of ASAT</a></h1>
         
 
         <div class="post-meta">
@@ -571,10 +571,11 @@
       
         
           
-            <p>Title: Page Placement Strategies for GPUs within Heterogeneous Memory Systems</p>
-<p>Topic: improve page placement performance for GPU in Heterogeneous Memory system</p>
-<p>Idea: proposed bandwidth-aware (BW-AWARE) placement, maximizes GPU throughput by controlling the weights of BO and CO in aggregated memory, and optimize selectively place hot pages in the BO memory when capacity is limited, use profile to augment that provide information about hotness and size of data structures.</p>
-<p>Contribution: a compiler-based GPU page placement solution</p>
+            <p>Title: Architectural Support for Address Translation on GPUs</p>
+<p>Topic: explore GPU Memory Management Units (MMUs) consisting of Translation Lookaside Buffers (TLBs) and page table walkers (PTWs), analyze current technology and propose augments</p>
+<p>Idea: In Heterogeneous Systems Architecture, the uniform virtual address of GPU/CPU memory can provide programming benefits and need efficient hardware, GPU’s warp-based execution model plays an important role. Using CPU-like MMU design would hurt GPU performance, they explored cache-conscious warp/wavefront scheduling for MMU design and how TLB affects dynamic warp formation. They explored and propose methods in 3 aspects: Address Translation for GPU, Cache Conscious Warp Scheduling, thread block compaction.</p>
+<p>The benefit of their work: remove need of CPU to handle GPU MMU, support multi-context and support application libraries.</p>
+<p>General sight: Default warp scheduling would break temporal locality, sophisticated warp scheduling would loss effectiveness.</p>
 
           
         
@@ -745,7 +746,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/ASAT/">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/pps/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yunjie Wang (fr42k)">
@@ -764,7 +765,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/05/ASAT/" itemprop="url">Paper Note of ASAT</a></h1>
+                <a class="post-title-link" href="/2018/04/05/pps/" itemprop="url">Paper Note of PPS</a></h1>
         
 
         <div class="post-meta">
@@ -816,11 +817,10 @@
       
         
           
-            <p>Title: Architectural Support for Address Translation on GPUs</p>
-<p>Topic: explore GPU Memory Management Units (MMUs) consisting of Translation Lookaside Buffers (TLBs) and page table walkers (PTWs), analyze current technology and propose augments</p>
-<p>Idea: In Heterogeneous Systems Architecture, the uniform virtual address of GPU/CPU memory can provide programming benefits and need efficient hardware, GPU’s warp-based execution model plays an important role. Using CPU-like MMU design would hurt GPU performance, they explored cache-conscious warp/wavefront scheduling for MMU design and how TLB affects dynamic warp formation. They explored and propose methods in 3 aspects: Address Translation for GPU, Cache Conscious Warp Scheduling, thread block compaction.</p>
-<p>The benefit of their work: remove need of CPU to handle GPU MMU, support multi-context and support application libraries.</p>
-<p>General sight: Default warp scheduling would break temporal locality, sophisticated warp scheduling would loss effectiveness.</p>
+            <p>Title: Page Placement Strategies for GPUs within Heterogeneous Memory Systems</p>
+<p>Topic: improve page placement performance for GPU in Heterogeneous Memory system</p>
+<p>Idea: proposed bandwidth-aware (BW-AWARE) placement, maximizes GPU throughput by controlling the weights of BO and CO in aggregated memory, and optimize selectively place hot pages in the BO memory when capacity is limited, use profile to augment that provide information about hotness and size of data structures.</p>
+<p>Contribution: a compiler-based GPU page placement solution</p>
 
           
         
