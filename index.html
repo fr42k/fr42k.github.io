@@ -1002,7 +1002,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/VGMM/">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/pps/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yunjie Wang (fr42k)">
@@ -1021,7 +1021,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/05/VGMM/" itemprop="url">Paper Note of VGMM</a></h1>
+                <a class="post-title-link" href="/2018/04/05/pps/" itemprop="url">Paper Note of PPS</a></h1>
         
 
         <div class="post-meta">
@@ -1073,9 +1073,10 @@
       
         
           
-            <p>Title: Vulnerable GPU Memory Management: Towards Recovering Raw Data from GPU</p>
-<p>Topic: The security issue of Heterogeneous architecture from GPU memory management and algorighm to recover data from residue.</p>
-<p>Idea: Analyze the weakness of HSA data security from GPU perspective, provide an algorighm that could recover image from GPU residue across the multiuser OS and Cloud computing, in 3 steps: get tilt, utilize the local similarity to idetify the size of image and remove leading blocks.</p>
+            <p>Title: Page Placement Strategies for GPUs within Heterogeneous Memory Systems</p>
+<p>Topic: improve page placement performance for GPU in Heterogeneous Memory system</p>
+<p>Idea: proposed bandwidth-aware (BW-AWARE) placement, maximizes GPU throughput by controlling the weights of BO and CO in aggregated memory, and optimize selectively place hot pages in the BO memory when capacity is limited, use profile to augment that provide information about hotness and size of data structures.</p>
+<p>Contribution: a compiler-based GPU page placement solution</p>
 
           
         
@@ -1248,7 +1249,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/pps/">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/VGMM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yunjie Wang (fr42k)">
@@ -1267,7 +1268,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/05/pps/" itemprop="url">Paper Note of PPS</a></h1>
+                <a class="post-title-link" href="/2018/04/05/VGMM/" itemprop="url">Paper Note of VGMM</a></h1>
         
 
         <div class="post-meta">
@@ -1319,10 +1320,9 @@
       
         
           
-            <p>Title: Page Placement Strategies for GPUs within Heterogeneous Memory Systems</p>
-<p>Topic: improve page placement performance for GPU in Heterogeneous Memory system</p>
-<p>Idea: proposed bandwidth-aware (BW-AWARE) placement, maximizes GPU throughput by controlling the weights of BO and CO in aggregated memory, and optimize selectively place hot pages in the BO memory when capacity is limited, use profile to augment that provide information about hotness and size of data structures.</p>
-<p>Contribution: a compiler-based GPU page placement solution</p>
+            <p>Title: Vulnerable GPU Memory Management: Towards Recovering Raw Data from GPU</p>
+<p>Topic: The security issue of Heterogeneous architecture from GPU memory management and algorighm to recover data from residue.</p>
+<p>Idea: Analyze the weakness of HSA data security from GPU perspective, provide an algorighm that could recover image from GPU residue across the multiuser OS and Cloud computing, in 3 steps: get tilt, utilize the local similarity to idetify the size of image and remove leading blocks.</p>
 
           
         
@@ -1780,6 +1780,31 @@
     
 
 
+
+
+   
+   
+   
+   
+   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+   
+       <script type="text/javascript">
+           function ShowGitment(){
+               document.getElementById("gitment-display-button").style.display = "none";
+               document.getElementById("gitment-container").style.display = "block";
+               var gitment = new Gitment({
+                   id: document.location.href,
+                   owner: '',
+                   repo: '',
+                   oauth: {
+                       client_id: '',
+                       client_secret: '',
+                   }});
+               gitment.render('gitment-container');
+           }
+       </script>
+   
 
 
 

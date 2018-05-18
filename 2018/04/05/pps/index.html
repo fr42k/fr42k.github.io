@@ -364,8 +364,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/30/APRES/" rel="next" title="Paper Note of APRES">
-                <i class="fa fa-chevron-left"></i> Paper Note of APRES
+              <a href="/2018/04/05/ASAT/" rel="next" title="Paper Note of ASAT">
+                <i class="fa fa-chevron-left"></i> Paper Note of ASAT
               </a>
             
           </div>
@@ -374,8 +374,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/05/ASAT/" rel="prev" title="Paper Note of ASAT">
-                Paper Note of ASAT <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/17/GPU_performance_ML/" rel="prev" title="Paper Note of GPU Performanc via ML">
+                Paper Note of GPU Performanc via ML <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -703,7 +703,7 @@
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitmint({
-            id: window.location.pathname, 
+            id: window.location.pathname,
             owner: 'fr42k',
             repo: 'https://github.com/fr42k/fr42k.github.io',
             
@@ -730,6 +730,31 @@
     
 
 
+
+
+   
+   
+   
+   
+   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+   
+       <script type="text/javascript">
+           function ShowGitment(){
+               document.getElementById("gitment-display-button").style.display = "none";
+               document.getElementById("gitment-container").style.display = "block";
+               var gitment = new Gitment({
+                   id: document.location.href,
+                   owner: '',
+                   repo: '',
+                   oauth: {
+                       client_id: '',
+                       client_secret: '',
+                   }});
+               gitment.render('gitment-container');
+           }
+       </script>
+   
 
 
 
