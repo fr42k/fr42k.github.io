@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="GPGPU," />
+  <meta name="keywords" content="CV," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Title: GPU Performance and Power Estimation Using Machine Learning Topic: Using machine learning for GPU performance and power rapid estimation Idea: For training: Vary GPU setting from 3 perspective(">
-<meta name="keywords" content="GPGPU">
+<meta name="description" content="Title: Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks Contribution:  (motivation: break the bottleneck in 2 stage detection which is the generating procedure of proposa">
+<meta name="keywords" content="CV">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Paper Note of GPU Performanc via ML">
-<meta property="og:url" content="http://fr42k.github.io/2018/04/17/GPU_performance_ML/index.html">
+<meta property="og:title" content="Paper Note of Faster RCNN">
+<meta property="og:url" content="http://fr42k.github.io/2018/05/20/FasterRCNN/index.html">
 <meta property="og:site_name" content="Yunjie Wang">
-<meta property="og:description" content="Title: GPU Performance and Power Estimation Using Machine Learning Topic: Using machine learning for GPU performance and power rapid estimation Idea: For training: Vary GPU setting from 3 perspective(">
+<meta property="og:description" content="Title: Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks Contribution:  (motivation: break the bottleneck in 2 stage detection which is the generating procedure of proposa">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-17T07:24:34.000Z">
+<meta property="og:updated_time" content="2018-05-20T09:54:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Paper Note of GPU Performanc via ML">
-<meta name="twitter:description" content="Title: GPU Performance and Power Estimation Using Machine Learning Topic: Using machine learning for GPU performance and power rapid estimation Idea: For training: Vary GPU setting from 3 perspective(">
+<meta name="twitter:title" content="Paper Note of Faster RCNN">
+<meta name="twitter:description" content="Title: Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks Contribution:  (motivation: break the bottleneck in 2 stage detection which is the generating procedure of proposa">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://fr42k.github.io/2018/04/17/GPU_performance_ML/"/>
+  <link rel="canonical" href="http://fr42k.github.io/2018/05/20/FasterRCNN/"/>
 
 
 
 
 
-  <title>Paper Note of GPU Performanc via ML | Yunjie Wang</title>
+  <title>Paper Note of Faster RCNN | Yunjie Wang</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/17/GPU_performance_ML/">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/20/FasterRCNN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yunjie Wang (fr42k)">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Paper Note of GPU Performanc via ML</h1>
+          <h1 class="post-title" itemprop="name headline">Paper Note of Faster RCNN</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-17T23:33:42+08:00">
-                2018-04-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-20T23:33:42+08:00">
+                2018-05-20
               </time>
             
 
@@ -301,8 +301,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/17/GPU_performance_ML/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/04/17/GPU_performance_ML/" itemprop="commentsCount"></span>
+                <a href="/2018/05/20/FasterRCNN/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/20/FasterRCNN/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -330,11 +330,24 @@
       
 
       
-        <p>Title: GPU Performance and Power Estimation Using Machine Learning</p>
-<p>Topic: Using machine learning for GPU performance and power rapid estimation</p>
-<p>Idea: For training: Vary GPU setting from 3 perspective(They use 3 hardware params to illustrate the method, which can also be extend to many params): #compute units(CU),  Mem Freq, Engine Freq to collect performance counters data, use K-means to cluster kernel performance: 1. CU scale, 2. Mem Freq &amp; Engine Freq scale, use neural networks to classify kernel to cluster.<br>or prediction: run kernel on one setting once then classify to pattern cluster, use corresponding cluster centroid scaling values to make predictions on various GPU hardware setting.</p>
-<p>Contribution: demonstrate on real hardware that the performance and power of GPGPU kernels scale in a limited number of ways as hardware configuration parameters are changed(finite unique scaling patterns), perform machine learning to estimate new kernel, describe an estimation model that run a kernel once on a hardware configuration then get performance and power over various configurations</p>
-<p>The result shows that their accuracy is comparable to the accuracy of cycle-level simulators, and on real hardware the trained model runs equal or faster than native programs.</p>
+        <p>Title: Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks</p>
+<p>Contribution:</p>
+<ul>
+<li>(motivation: break the bottleneck in 2 stage detection which is the generating procedure of proposals)</li>
+<li>propose Region Prososal Networks (RPN) for generating proposals who shares conv layers with afterward detection networks<ul>
+<li>RPN: several conv layers - regress region bounds and objectness scores at each location on a grid</li>
+<li>used nms on proposal regions based on cls scores</li>
+</ul>
+</li>
+<li>introduce anchor boxes as references at multi-scales/-aspect ratios<ul>
+<li>could be thought as pyramid of filters</li>
+<li>key component for effectively sharing features</li>
+</ul>
+</li>
+<li>propose an alternating training scheme for the 2 stage detection</li>
+<li>evaluated with different param/structure setting comprehensively (PASCAL VOC/ COCO)</li>
+</ul>
+<p>Pros: end-to-end, provided code &amp; detailed hyper-parameters for reimplement</p>
 
       
     </div>
@@ -352,7 +365,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/GPGPU/" rel="tag"># GPGPU</a>
+            <a href="/tags/CV/" rel="tag"># CV</a>
           
         </div>
       
@@ -365,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/05/ASAT/" rel="next" title="Paper Note of ASAT">
-                <i class="fa fa-chevron-left"></i> Paper Note of ASAT
+              <a href="/2018/05/18/FCN/" rel="next" title="Paper Note of FCN">
+                <i class="fa fa-chevron-left"></i> Paper Note of FCN
               </a>
             
           </div>
@@ -374,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/19/TOM/" rel="prev" title="Paper Note of TOM">
-                Paper Note of TOM <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

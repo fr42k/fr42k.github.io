@@ -252,6 +252,143 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/20/FasterRCNN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunjie Wang (fr42k)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yunjie Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/20/FasterRCNN/" itemprop="url">Paper Note of Faster RCNN</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-20T23:33:42+08:00">
+                2018-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Title: Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks</p>
+<p>Contribution:</p>
+<ul>
+<li>(motivation: break the bottleneck in 2 stage detection which is the generating procedure of proposals)</li>
+<li>propose Region Prososal Networks (RPN) for generating proposals who shares conv layers with afterward detection networks<ul>
+<li>RPN: several conv layers - regress region bounds and objectness scores at each location on a grid</li>
+<li>used nms on proposal regions based on cls scores</li>
+</ul>
+</li>
+<li>introduce anchor boxes as references at multi-scales/-aspect ratios<ul>
+<li>could be thought as pyramid of filters</li>
+<li>key component for effectively sharing features</li>
+</ul>
+</li>
+<li>propose an alternating training scheme for the 2 stage detection</li>
+<li>evaluated with different param/structure setting comprehensively (PASCAL VOC/ COCO)</li>
+</ul>
+<p>Pros: end-to-end, provided code &amp; detailed hyper-parameters for reimplement</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/18/FCN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1002,129 +1139,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/pps/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yunjie Wang (fr42k)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yunjie Wang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/05/pps/" itemprop="url">Paper Note of PPS</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-05T23:33:42+08:00">
-                2018-04-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Title: Page Placement Strategies for GPUs within Heterogeneous Memory Systems</p>
-<p>Topic: improve page placement performance for GPU in Heterogeneous Memory system</p>
-<p>Idea: proposed bandwidth-aware (BW-AWARE) placement, maximizes GPU throughput by controlling the weights of BO and CO in aggregated memory, and optimize selectively place hot pages in the BO memory when capacity is limited, use profile to augment that provide information about hotness and size of data structures.</p>
-<p>Contribution: a compiler-based GPU page placement solution</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/ASAT/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1371,7 +1385,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/03/30/APRES/">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/pps/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yunjie Wang (fr42k)">
@@ -1390,7 +1404,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/30/APRES/" itemprop="url">Paper Note of APRES</a></h1>
+                <a class="post-title-link" href="/2018/04/05/pps/" itemprop="url">Paper Note of PPS</a></h1>
         
 
         <div class="post-meta">
@@ -1402,8 +1416,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-30T02:35:42+08:00">
-                2018-03-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-05T23:33:42+08:00">
+                2018-04-05
               </time>
             
 
@@ -1442,13 +1456,10 @@
       
         
           
-            <p>Title: APRES: Improving Cache Efficiency by Exploiting Load Characteristics on GPUs</p>
-<p>Topic: Analyze the situation of data cache and improve GPU L1 cache performance based on group warp priority with prefetch to enhance cache reuse</p>
-<p>Idea: Based on the locality of data usage, Locality Aware Warp Scheduler (LAWS) group warps who share last load PC and set priority to do greedy manage, store all global memory load on Last Load Table, put the grouping information in Warp Group Table and schedule execute order by the Load Store Unit (LSU) and Scheduling Aware Prefetching (SAP), who would put the missing warp at low priority and ask LAWS to give high priority to the prefetch warp for that missing group, with stored previous load and warp ID in the missing group.</p>
-<p>Contribution: Analysis of load instructions on GPU and a mechanism named APRES that combine grouping warp to execute with priority and prefetching.</p>
-<p>Intellectual merit: Figure out the locality of cache utilization and opportunity to prefetch, proposed dedicated mechanism aimed at GPU L1 cache optimization based on the observation: LAWS group warps to do priority management, SAP change missing warp to the end and do prefetch.</p>
-<p>Strengths: Detailed legends as examples to illustrate the mechanism</p>
-<p>Weakness: Performance may limited because of simulation and no real GPU environment</p>
+            <p>Title: Page Placement Strategies for GPUs within Heterogeneous Memory Systems</p>
+<p>Topic: improve page placement performance for GPU in Heterogeneous Memory system</p>
+<p>Idea: proposed bandwidth-aware (BW-AWARE) placement, maximizes GPU throughput by controlling the weights of BO and CO in aggregated memory, and optimize selectively place hot pages in the BO memory when capacity is limited, use profile to augment that provide information about hotness and size of data structures.</p>
+<p>Contribution: a compiler-based GPU page placement solution</p>
 
           
         
@@ -1534,7 +1545,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
