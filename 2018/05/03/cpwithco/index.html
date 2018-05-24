@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Yunjie Wang">
 <meta property="og:description" content="Title: Using Classical Planners for Tasks with Continuous Operators in Robotics Idea:  Provide an algorithm for high-level planning which utilized classic planners and low-level executing: Use Skolem">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-05-08T15:38:44.000Z">
+<meta property="og:updated_time" content="2018-05-24T10:00:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Paper Note of Classical Planners for Tasks with Continuous Operators">
 <meta name="twitter:description" content="Title: Using Classical Planners for Tasks with Continuous Operators in Robotics Idea:  Provide an algorithm for high-level planning which utilized classic planners and low-level executing: Use Skolem">
@@ -331,7 +331,36 @@
 
       
         <p>Title: Using Classical Planners for Tasks with Continuous Operators in Robotics</p>
-<p>Idea:  Provide an algorithm for high-level planning which utilized classic planners and low-level executing: Use Skolem symbols to instead continuous operators for high-level, discrete planning, use sampling to estimate the values of Skolem symbols and RRT-based techniques to implement movements representing each action in the plan.</p>
+<p>Idea:</p>
+<ul>
+<li>Provide an algorithm for high-level planning which utilized classic planners and low-level executing:<ul>
+<li>Use Skolem symbols to instead continuous operators for high-level, discrete planning,</li>
+<li>use sampling to estimate the values of Skolem symbols and RRT-based techniques to implement movements representing each action in the plan.</li>
+<li>get error message from low level then return to high level planner to refine</li>
+</ul>
+</li>
+</ul>
+<p>Contribution:</p>
+<ul>
+<li>provides a method for synchronizing between continuous and discrete planning layers</li>
+<li>utilize classical planner when facts and operator effects over continuous variables are not available a priori</li>
+</ul>
+<p>Experiment:</p>
+<ul>
+<li>simulated using OpenRave</li>
+<li>Pick and Place Scenario:<ul>
+<li>planner: FastForward (well-established)</li>
+<li>30 tests over 3 randomly generated environments</li>
+<li>80 to 130 configurations</li>
+<li>the total average time is far less than the precomp-methods, and needs acceptable re-plan</li>
+</ul>
+</li>
+<li>Dining Table Set-Up Scenario<ul>
+<li>planner: FastDownward (cost-sensitive)</li>
+<li>required 230s, including execution</li>
+</ul>
+</li>
+</ul>
 
       
     </div>

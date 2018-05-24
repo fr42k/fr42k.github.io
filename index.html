@@ -721,7 +721,36 @@
         
           
             <p>Title: Using Classical Planners for Tasks with Continuous Operators in Robotics</p>
-<p>Idea:  Provide an algorithm for high-level planning which utilized classic planners and low-level executing: Use Skolem symbols to instead continuous operators for high-level, discrete planning, use sampling to estimate the values of Skolem symbols and RRT-based techniques to implement movements representing each action in the plan.</p>
+<p>Idea:</p>
+<ul>
+<li>Provide an algorithm for high-level planning which utilized classic planners and low-level executing:<ul>
+<li>Use Skolem symbols to instead continuous operators for high-level, discrete planning,</li>
+<li>use sampling to estimate the values of Skolem symbols and RRT-based techniques to implement movements representing each action in the plan.</li>
+<li>get error message from low level then return to high level planner to refine</li>
+</ul>
+</li>
+</ul>
+<p>Contribution:</p>
+<ul>
+<li>provides a method for synchronizing between continuous and discrete planning layers</li>
+<li>utilize classical planner when facts and operator effects over continuous variables are not available a priori</li>
+</ul>
+<p>Experiment:</p>
+<ul>
+<li>simulated using OpenRave</li>
+<li>Pick and Place Scenario:<ul>
+<li>planner: FastForward (well-established)</li>
+<li>30 tests over 3 randomly generated environments</li>
+<li>80 to 130 configurations</li>
+<li>the total average time is far less than the precomp-methods, and needs acceptable re-plan</li>
+</ul>
+</li>
+<li>Dining Table Set-Up Scenario<ul>
+<li>planner: FastDownward (cost-sensitive)</li>
+<li>required 230s, including execution</li>
+</ul>
+</li>
+</ul>
 
           
         
@@ -1139,128 +1168,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/VGMM/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yunjie Wang (fr42k)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yunjie Wang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/05/VGMM/" itemprop="url">Paper Note of VGMM</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-05T23:33:42+08:00">
-                2018-04-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Title: Vulnerable GPU Memory Management: Towards Recovering Raw Data from GPU</p>
-<p>Topic: The security issue of Heterogeneous architecture from GPU memory management and algorighm to recover data from residue.</p>
-<p>Idea: Analyze the weakness of HSA data security from GPU perspective, provide an algorighm that could recover image from GPU residue across the multiuser OS and Cloud computing, in 3 steps: get tilt, utilize the local similarity to idetify the size of image and remove leading blocks.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/ASAT/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1337,6 +1244,128 @@
 <p>Idea: In Heterogeneous Systems Architecture, the uniform virtual address of GPU/CPU memory can provide programming benefits and need efficient hardware, GPU’s warp-based execution model plays an important role. Using CPU-like MMU design would hurt GPU performance, they explored cache-conscious warp/wavefront scheduling for MMU design and how TLB affects dynamic warp formation. They explored and propose methods in 3 aspects: Address Translation for GPU, Cache Conscious Warp Scheduling, thread block compaction.</p>
 <p>The benefit of their work: remove need of CPU to handle GPU MMU, support multi-context and support application libraries.</p>
 <p>General sight: Default warp scheduling would break temporal locality, sophisticated warp scheduling would loss effectiveness.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/VGMM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunjie Wang (fr42k)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yunjie Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/05/VGMM/" itemprop="url">Paper Note of VGMM</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-05T23:33:42+08:00">
+                2018-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Title: Vulnerable GPU Memory Management: Towards Recovering Raw Data from GPU</p>
+<p>Topic: The security issue of Heterogeneous architecture from GPU memory management and algorighm to recover data from residue.</p>
+<p>Idea: Analyze the weakness of HSA data security from GPU perspective, provide an algorighm that could recover image from GPU residue across the multiuser OS and Cloud computing, in 3 steps: get tilt, utilize the local similarity to idetify the size of image and remove leading blocks.</p>
 
           
         
