@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="GPGPU," />
+  <meta name="keywords" content="CV," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Title: Vulnerable GPU Memory Management: Towards Recovering Raw Data from GPU Topic: The security issue of Heterogeneous architecture from GPU memory management and algorighm to recover data from resi">
-<meta name="keywords" content="GPGPU">
+<meta name="description" content="Title: Mask R-CNN Contribution:  extend Faster R-CNN by adding a mask branch, which could be used for seg and also improves accuracy the mask branch is a small FCN applied to each ROI a mask encodes a">
+<meta name="keywords" content="CV">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Paper Note of VGMM">
-<meta property="og:url" content="http://fr42k.github.io/2018/04/05/VGMM/index.html">
+<meta property="og:title" content="Paper Note of maskRCNN">
+<meta property="og:url" content="http://fr42k.github.io/2018/05/27/maskRCNN/index.html">
 <meta property="og:site_name" content="Yunjie Wang">
-<meta property="og:description" content="Title: Vulnerable GPU Memory Management: Towards Recovering Raw Data from GPU Topic: The security issue of Heterogeneous architecture from GPU memory management and algorighm to recover data from resi">
+<meta property="og:description" content="Title: Mask R-CNN Contribution:  extend Faster R-CNN by adding a mask branch, which could be used for seg and also improves accuracy the mask branch is a small FCN applied to each ROI a mask encodes a">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-06T16:05:48.000Z">
+<meta property="og:updated_time" content="2018-05-27T07:11:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Paper Note of VGMM">
-<meta name="twitter:description" content="Title: Vulnerable GPU Memory Management: Towards Recovering Raw Data from GPU Topic: The security issue of Heterogeneous architecture from GPU memory management and algorighm to recover data from resi">
+<meta name="twitter:title" content="Paper Note of maskRCNN">
+<meta name="twitter:description" content="Title: Mask R-CNN Contribution:  extend Faster R-CNN by adding a mask branch, which could be used for seg and also improves accuracy the mask branch is a small FCN applied to each ROI a mask encodes a">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://fr42k.github.io/2018/04/05/VGMM/"/>
+  <link rel="canonical" href="http://fr42k.github.io/2018/05/27/maskRCNN/"/>
 
 
 
 
 
-  <title>Paper Note of VGMM | Yunjie Wang</title>
+  <title>Paper Note of maskRCNN | Yunjie Wang</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/VGMM/">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/27/maskRCNN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yunjie Wang (fr42k)">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Paper Note of VGMM</h1>
+          <h1 class="post-title" itemprop="name headline">Paper Note of maskRCNN</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-05T23:33:42+08:00">
-                2018-04-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-27T23:33:42+08:00">
+                2018-05-27
               </time>
             
 
@@ -301,8 +301,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/05/VGMM/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/04/05/VGMM/" itemprop="commentsCount"></span>
+                <a href="/2018/05/27/maskRCNN/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/27/maskRCNN/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -330,9 +330,24 @@
       
 
       
-        <p>Title: Vulnerable GPU Memory Management: Towards Recovering Raw Data from GPU</p>
-<p>Topic: The security issue of Heterogeneous architecture from GPU memory management and algorighm to recover data from residue.</p>
-<p>Idea: Analyze the weakness of HSA data security from GPU perspective, provide an algorighm that could recover image from GPU residue across the multiuser OS and Cloud computing, in 3 steps: get tilt, utilize the local similarity to idetify the size of image and remove leading blocks.</p>
+        <p>Title: Mask R-CNN</p>
+<p>Contribution:</p>
+<ul>
+<li>extend Faster R-CNN by adding a mask branch, which could be used for seg and also improves accuracy<ul>
+<li>the mask branch is a small FCN applied to each ROI</li>
+<li>a mask encodes an input object’s spatial layout</li>
+<li>extracting the spatial structure of masks can be addressed naturally by the pixel-to-pixel correspondence provided by convolutions</li>
+<li>the fully conv needs fewer params and is more accurate</li>
+</ul>
+</li>
+<li>illustrates that decouple mask and class prediction is essential, so that the loss of the mask branch is the avg binary cross-entropy loss</li>
+<li>proposed ROI Align for better predicting pixel-accurate masks<ul>
+<li>avoid quantization of the boundaries or bins</li>
+<li>insensitive to max/avg pool</li>
+</ul>
+</li>
+<li>shows ablation experiments and analysis of improvements</li>
+</ul>
 
       
     </div>
@@ -350,7 +365,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/GPGPU/" rel="tag"># GPGPU</a>
+            <a href="/tags/CV/" rel="tag"># CV</a>
           
         </div>
       
@@ -363,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/05/ASAT/" rel="next" title="Paper Note of ASAT">
-                <i class="fa fa-chevron-left"></i> Paper Note of ASAT
+              <a href="/2018/05/27/lightheadRCNN/" rel="next" title="Paper Note of lightheadRCNN">
+                <i class="fa fa-chevron-left"></i> Paper Note of lightheadRCNN
               </a>
             
           </div>
@@ -372,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/05/pps/" rel="prev" title="Paper Note of PPS">
-                Paper Note of PPS <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

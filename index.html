@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/27/RFCN/">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/27/maskRCNN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yunjie Wang (fr42k)">
@@ -271,7 +271,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/27/RFCN/" itemprop="url">Paper Note of RFCN</a></h1>
+                <a class="post-title-link" href="/2018/05/27/maskRCNN/" itemprop="url">Paper Note of maskRCNN</a></h1>
         
 
         <div class="post-meta">
@@ -323,22 +323,23 @@
       
         
           
-            <p>Title: R-FCN: Object Detection via Region-based Fully Convolutional Networks</p>
+            <p>Title: Mask R-CNN</p>
 <p>Contribution:</p>
 <ul>
-<li>introduce the ROI pooling layer at proper location for share computation</li>
-<li>position sensitive score maps to alleviate the dilemma <code>translation invariance for cls vs translation variance for det</code></li>
-<li>ps roi pooling: (precondition: project rois to feature maps by using conv layer with k^2 * (C + 1) channels where k is the number each ROI divided by and C is the number of classes) abstract information in each bin then all k^2 bins vote for a C+1 channel vector</li>
+<li>extend Faster R-CNN by adding a mask branch, which could be used for seg and also improves accuracy<ul>
+<li>the mask branch is a small FCN applied to each ROI</li>
+<li>a mask encodes an input object’s spatial layout</li>
+<li>extracting the spatial structure of masks can be addressed naturally by the pixel-to-pixel correspondence provided by convolutions</li>
+<li>the fully conv needs fewer params and is more accurate</li>
 </ul>
-<p>Experiment:</p>
-<ul>
-<li>used ResNet-101 as backbone network followed by k^2(C+1) channel conv layer</li>
-<li>reduce stride 32-&gt;16 pixel, used dilated conv on conv5</li>
-<li>83.6% mAP PASCAL VOC 2007, 82.0% 2012, test-time 170ms per image</li>
+</li>
+<li>illustrates that decouple mask and class prediction is essential, so that the loss of the mask branch is the avg binary cross-entropy loss</li>
+<li>proposed ROI Align for better predicting pixel-accurate masks<ul>
+<li>avoid quantization of the boundaries or bins</li>
+<li>insensitive to max/avg pool</li>
 </ul>
-<p>Future works:</p>
-<ul>
-<li>apply extensions of FCNs</li>
+</li>
+<li>shows ablation experiments and analysis of improvements</li>
 </ul>
 
           
@@ -474,6 +475,142 @@
 <li>R-FCN as baseline</li>
 <li>with ResNet as backbone, achieve 41.5 mmAP</li>
 <li>with Xception achieve 30.7 mmAP, 102 FPS</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/27/RFCN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunjie Wang (fr42k)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yunjie Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/27/RFCN/" itemprop="url">Paper Note of RFCN</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-27T23:33:42+08:00">
+                2018-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Title: R-FCN: Object Detection via Region-based Fully Convolutional Networks</p>
+<p>Contribution:</p>
+<ul>
+<li>introduce the ROI pooling layer at proper location for share computation</li>
+<li>position sensitive score maps to alleviate the dilemma <code>translation invariance for cls vs translation variance for det</code></li>
+<li>ps roi pooling: (precondition: project rois to feature maps by using conv layer with k^2 * (C + 1) channels where k is the number each ROI divided by and C is the number of classes) abstract information in each bin then all k^2 bins vote for a C+1 channel vector</li>
+</ul>
+<p>Experiment:</p>
+<ul>
+<li>used ResNet-101 as backbone network followed by k^2(C+1) channel conv layer</li>
+<li>reduce stride 32-&gt;16 pixel, used dilated conv on conv5</li>
+<li>83.6% mAP PASCAL VOC 2007, 82.0% 2012, test-time 170ms per image</li>
+</ul>
+<p>Future works:</p>
+<ul>
+<li>apply extensions of FCNs</li>
 </ul>
 
           
@@ -1447,129 +1584,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/pps/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yunjie Wang (fr42k)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yunjie Wang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/05/pps/" itemprop="url">Paper Note of PPS</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-05T23:33:42+08:00">
-                2018-04-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Title: Page Placement Strategies for GPUs within Heterogeneous Memory Systems</p>
-<p>Topic: improve page placement performance for GPU in Heterogeneous Memory system</p>
-<p>Idea: proposed bandwidth-aware (BW-AWARE) placement, maximizes GPU throughput by controlling the weights of BO and CO in aggregated memory, and optimize selectively place hot pages in the BO memory when capacity is limited, use profile to augment that provide information about hotness and size of data structures.</p>
-<p>Contribution: a compiler-based GPU page placement solution</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1620,7 +1634,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

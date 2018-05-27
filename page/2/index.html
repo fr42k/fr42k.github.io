@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/ASAT/">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/pps/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yunjie Wang (fr42k)">
@@ -271,7 +271,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/05/ASAT/" itemprop="url">Paper Note of ASAT</a></h1>
+                <a class="post-title-link" href="/2018/04/05/pps/" itemprop="url">Paper Note of PPS</a></h1>
         
 
         <div class="post-meta">
@@ -323,11 +323,10 @@
       
         
           
-            <p>Title: Architectural Support for Address Translation on GPUs</p>
-<p>Topic: explore GPU Memory Management Units (MMUs) consisting of Translation Lookaside Buffers (TLBs) and page table walkers (PTWs), analyze current technology and propose augments</p>
-<p>Idea: In Heterogeneous Systems Architecture, the uniform virtual address of GPU/CPU memory can provide programming benefits and need efficient hardware, GPU’s warp-based execution model plays an important role. Using CPU-like MMU design would hurt GPU performance, they explored cache-conscious warp/wavefront scheduling for MMU design and how TLB affects dynamic warp formation. They explored and propose methods in 3 aspects: Address Translation for GPU, Cache Conscious Warp Scheduling, thread block compaction.</p>
-<p>The benefit of their work: remove need of CPU to handle GPU MMU, support multi-context and support application libraries.</p>
-<p>General sight: Default warp scheduling would break temporal locality, sophisticated warp scheduling would loss effectiveness.</p>
+            <p>Title: Page Placement Strategies for GPUs within Heterogeneous Memory Systems</p>
+<p>Topic: improve page placement performance for GPU in Heterogeneous Memory system</p>
+<p>Idea: proposed bandwidth-aware (BW-AWARE) placement, maximizes GPU throughput by controlling the weights of BO and CO in aggregated memory, and optimize selectively place hot pages in the BO memory when capacity is limited, use profile to augment that provide information about hotness and size of data structures.</p>
+<p>Contribution: a compiler-based GPU page placement solution</p>
 
           
         
@@ -450,6 +449,130 @@
             <p>Title: Vulnerable GPU Memory Management: Towards Recovering Raw Data from GPU</p>
 <p>Topic: The security issue of Heterogeneous architecture from GPU memory management and algorighm to recover data from residue.</p>
 <p>Idea: Analyze the weakness of HSA data security from GPU perspective, provide an algorighm that could recover image from GPU residue across the multiuser OS and Cloud computing, in 3 steps: get tilt, utilize the local similarity to idetify the size of image and remove leading blocks.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/ASAT/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunjie Wang (fr42k)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yunjie Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/05/ASAT/" itemprop="url">Paper Note of ASAT</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-05T23:33:42+08:00">
+                2018-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Title: Architectural Support for Address Translation on GPUs</p>
+<p>Topic: explore GPU Memory Management Units (MMUs) consisting of Translation Lookaside Buffers (TLBs) and page table walkers (PTWs), analyze current technology and propose augments</p>
+<p>Idea: In Heterogeneous Systems Architecture, the uniform virtual address of GPU/CPU memory can provide programming benefits and need efficient hardware, GPU’s warp-based execution model plays an important role. Using CPU-like MMU design would hurt GPU performance, they explored cache-conscious warp/wavefront scheduling for MMU design and how TLB affects dynamic warp formation. They explored and propose methods in 3 aspects: Address Translation for GPU, Cache Conscious Warp Scheduling, thread block compaction.</p>
+<p>The benefit of their work: remove need of CPU to handle GPU MMU, support multi-context and support application libraries.</p>
+<p>General sight: Default warp scheduling would break temporal locality, sophisticated warp scheduling would loss effectiveness.</p>
 
           
         
@@ -1364,133 +1487,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2017/08/29/InstallKaldiinOSX/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yunjie Wang (fr42k)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yunjie Wang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/29/InstallKaldiinOSX/" itemprop="url">Install Kaldi in OSX</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-29T17:03:31+08:00">
-                2017-08-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>I installed kaldi in my own Mac from scratch, and encountered some problems.<br>Here are some guidance for some one may have trouble in installing kaldi.</p>
-<ol>
-<li><code>git clone https://github.com/kaldi-asr/kaldi.git kaldi-trunk --origin golden</code></li>
-<li><code>./kaldi-trunk/tools/extras/check_dependencies.sh</code></li>
-<li>Install all the dependencies. Notice that <code>libtoolize</code> is named <code>libtool</code> within <code>brew</code>.</li>
-<li><code>cd kaldi-trunk/tools; make</code></li>
-<li><code>cd ../src; ./configure; make</code></li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1541,7 +1537,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
