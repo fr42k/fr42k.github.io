@@ -252,141 +252,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/27/lightheadRCNN/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yunjie Wang (fr42k)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yunjie Wang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/27/lightheadRCNN/" itemprop="url">Paper Note of lightheadRCNN</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-27T23:33:42+08:00">
-                2018-05-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Title: Light-Head R-CNN: In Defense of Two-Stage Object Detector</p>
-<p>Contribution:</p>
-<ul>
-<li>proposed a 2-stage detector with good accuracy and promising speed compare with single-stage detector</li>
-<li>investigate the problems with Faster-RCNN (global avg pooling harmful for spatial loc with out sharing compution) &amp; RFCN (with a large score map for ROI pooling which is costly)</li>
-<li>proposed thin feature maps for generating small channel ROI feature maps, improving accuracy, save mem/ computation</li>
-<li>detailed hyper-param setting &amp; experiments give strong results, also show techs which improved mAP</li>
-</ul>
-<p>Experiment:</p>
-<ul>
-<li>evaluated on COCO</li>
-<li>adopt dilated conv &amp; OHEM</li>
-<li>R-FCN as baseline</li>
-<li>with ResNet as backbone, achieve 41.5 mmAP</li>
-<li>with Xception achieve 30.7 mmAP, 102 FPS</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/27/RFCN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -474,6 +339,141 @@
 <p>Future works:</p>
 <ul>
 <li>apply extensions of FCNs</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/27/lightheadRCNN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunjie Wang (fr42k)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yunjie Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/27/lightheadRCNN/" itemprop="url">Paper Note of lightheadRCNN</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-27T23:33:42+08:00">
+                2018-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Title: Light-Head R-CNN: In Defense of Two-Stage Object Detector</p>
+<p>Contribution:</p>
+<ul>
+<li>proposed a 2-stage detector with good accuracy and promising speed compare with single-stage detector</li>
+<li>investigate the problems with Faster-RCNN (global avg pooling harmful for spatial loc with out sharing compution) &amp; RFCN (with a large score map for ROI pooling which is costly)</li>
+<li>proposed thin feature maps for generating small channel ROI feature maps, improving accuracy, save mem/ computation</li>
+<li>detailed hyper-param setting &amp; experiments give strong results, also show techs which improved mAP</li>
+</ul>
+<p>Experiment:</p>
+<ul>
+<li>evaluated on COCO</li>
+<li>adopt dilated conv &amp; OHEM</li>
+<li>R-FCN as baseline</li>
+<li>with ResNet as backbone, achieve 41.5 mmAP</li>
+<li>with Xception achieve 30.7 mmAP, 102 FPS</li>
 </ul>
 
           
