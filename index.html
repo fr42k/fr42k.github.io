@@ -252,6 +252,141 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/27/lightheadRCNN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunjie Wang (fr42k)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yunjie Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/27/lightheadRCNN/" itemprop="url">Paper Note of lightheadRCNN</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-27T23:33:42+08:00">
+                2018-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Title: Light-Head R-CNN: In Defense of Two-Stage Object Detector</p>
+<p>Contribution:</p>
+<ul>
+<li>proposed a 2-stage detector with good accuracy and promising speed compare with single-stage detector</li>
+<li>investigate the problems with Faster-RCNN (global avg pooling harmful for spatial loc with out sharing compution) &amp; RFCN (with a large score map for ROI pooling which is costly)</li>
+<li>proposed thin feature maps for generating small channel ROI feature maps, improving accuracy, save mem/ computation</li>
+<li>detailed hyper-param setting &amp; experiments give strong results, also show techs which improved mAP</li>
+</ul>
+<p>Experiment:</p>
+<ul>
+<li>evaluated on COCO</li>
+<li>adopt dilated conv &amp; OHEM</li>
+<li>R-FCN as baseline</li>
+<li>with ResNet as backbone, achieve 41.5 mmAP</li>
+<li>with Xception achieve 30.7 mmAP, 102 FPS</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/27/RFCN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -477,141 +612,6 @@
 <li>evaluated with different param/structure setting comprehensively (PASCAL VOC/ COCO)</li>
 </ul>
 <p>Pros: end-to-end, provided code &amp; detailed hyper-parameters for reimplement</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/18/lightheadRCNN/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yunjie Wang (fr42k)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yunjie Wang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/18/lightheadRCNN/" itemprop="url">Paper Note of lightheadRCNN</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-18T23:33:42+08:00">
-                2018-05-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Title: Light-Head R-CNN: In Defense of Two-Stage Object Detector</p>
-<p>Contribution:</p>
-<ul>
-<li>proposed a 2-stage detector with good accuracy and promising speed compare with single-stage detector</li>
-<li>investigate the problems with Faster-RCNN (global avg pooling harmful for spatial loc with out sharing compution) &amp; RFCN (with a large score map for ROI pooling which is costly)</li>
-<li>proposed thin feature maps for generating small channel ROI feature maps, improving accuracy, save mem/ computation</li>
-<li>detailed hyper-param setting &amp; experiments give strong results, also show techs which improved mAP</li>
-</ul>
-<p>Experiment:</p>
-<ul>
-<li>evaluated on COCO</li>
-<li>adopt dilated conv &amp; OHEM</li>
-<li>R-FCN as baseline</li>
-<li>with ResNet as backbone, achieve 41.5 mmAP</li>
-<li>with Xception achieve 30.7 mmAP, 102 FPS</li>
-</ul>
 
           
         
@@ -1460,7 +1460,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/ASAT/">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/pps/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yunjie Wang (fr42k)">
@@ -1479,7 +1479,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/05/ASAT/" itemprop="url">Paper Note of ASAT</a></h1>
+                <a class="post-title-link" href="/2018/04/05/pps/" itemprop="url">Paper Note of PPS</a></h1>
         
 
         <div class="post-meta">
@@ -1531,11 +1531,10 @@
       
         
           
-            <p>Title: Architectural Support for Address Translation on GPUs</p>
-<p>Topic: explore GPU Memory Management Units (MMUs) consisting of Translation Lookaside Buffers (TLBs) and page table walkers (PTWs), analyze current technology and propose augments</p>
-<p>Idea: In Heterogeneous Systems Architecture, the uniform virtual address of GPU/CPU memory can provide programming benefits and need efficient hardware, GPU’s warp-based execution model plays an important role. Using CPU-like MMU design would hurt GPU performance, they explored cache-conscious warp/wavefront scheduling for MMU design and how TLB affects dynamic warp formation. They explored and propose methods in 3 aspects: Address Translation for GPU, Cache Conscious Warp Scheduling, thread block compaction.</p>
-<p>The benefit of their work: remove need of CPU to handle GPU MMU, support multi-context and support application libraries.</p>
-<p>General sight: Default warp scheduling would break temporal locality, sophisticated warp scheduling would loss effectiveness.</p>
+            <p>Title: Page Placement Strategies for GPUs within Heterogeneous Memory Systems</p>
+<p>Topic: improve page placement performance for GPU in Heterogeneous Memory system</p>
+<p>Idea: proposed bandwidth-aware (BW-AWARE) placement, maximizes GPU throughput by controlling the weights of BO and CO in aggregated memory, and optimize selectively place hot pages in the BO memory when capacity is limited, use profile to augment that provide information about hotness and size of data structures.</p>
+<p>Contribution: a compiler-based GPU page placement solution</p>
 
           
         
