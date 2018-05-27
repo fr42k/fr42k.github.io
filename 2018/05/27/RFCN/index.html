@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Title: Fully Convolutional Networks for Semantic Segmentation Contribution:  use fully convolution to get heatmap as output which can provide pixelwise information use skip structure to fuse low level">
+<meta name="description" content="Title: R-FCN: Object Detection via Region-based Fully Convolutional Networks Contribution:  introduce the ROI pooling layer at proper location for share computation position sensitive score maps to al">
 <meta name="keywords" content="CV">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Paper Note of FCN">
-<meta property="og:url" content="http://fr42k.github.io/2018/05/18/FCN/index.html">
+<meta property="og:title" content="Paper Note of RFCN">
+<meta property="og:url" content="http://fr42k.github.io/2018/05/27/RFCN/index.html">
 <meta property="og:site_name" content="Yunjie Wang">
-<meta property="og:description" content="Title: Fully Convolutional Networks for Semantic Segmentation Contribution:  use fully convolution to get heatmap as output which can provide pixelwise information use skip structure to fuse low level">
+<meta property="og:description" content="Title: R-FCN: Object Detection via Region-based Fully Convolutional Networks Contribution:  introduce the ROI pooling layer at proper location for share computation position sensitive score maps to al">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-05-18T08:38:06.000Z">
+<meta property="og:updated_time" content="2018-05-27T06:10:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Paper Note of FCN">
-<meta name="twitter:description" content="Title: Fully Convolutional Networks for Semantic Segmentation Contribution:  use fully convolution to get heatmap as output which can provide pixelwise information use skip structure to fuse low level">
+<meta name="twitter:title" content="Paper Note of RFCN">
+<meta name="twitter:description" content="Title: R-FCN: Object Detection via Region-based Fully Convolutional Networks Contribution:  introduce the ROI pooling layer at proper location for share computation position sensitive score maps to al">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://fr42k.github.io/2018/05/18/FCN/"/>
+  <link rel="canonical" href="http://fr42k.github.io/2018/05/27/RFCN/"/>
 
 
 
 
 
-  <title>Paper Note of FCN | Yunjie Wang</title>
+  <title>Paper Note of RFCN | Yunjie Wang</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/18/FCN/">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/27/RFCN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yunjie Wang (fr42k)">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Paper Note of FCN</h1>
+          <h1 class="post-title" itemprop="name headline">Paper Note of RFCN</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-18T23:33:42+08:00">
-                2018-05-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-27T23:33:42+08:00">
+                2018-05-27
               </time>
             
 
@@ -301,8 +301,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/18/FCN/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/18/FCN/" itemprop="commentsCount"></span>
+                <a href="/2018/05/27/RFCN/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/27/RFCN/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -330,25 +330,22 @@
       
 
       
-        <p>Title: Fully Convolutional Networks for Semantic Segmentation</p>
+        <p>Title: R-FCN: Object Detection via Region-based Fully Convolutional Networks</p>
 <p>Contribution:</p>
 <ul>
-<li>use fully convolution to get heatmap as output which can provide pixelwise information</li>
-<li>use skip structure to fuse low level precision feature with high level coarse spatial (semantic) feature</li>
-<li>investigated shift-and-stitch (deprecated), patchwise training (deprecated) in training phase</li>
-<li>upsampling as backwards strided convolution, effective for learning dense prediction</li>
+<li>introduce the ROI pooling layer at proper location for share computation</li>
+<li>position sensitive score maps to alleviate the dilemma <code>translation invariance for cls vs translation variance for det</code></li>
+<li>ps roi pooling: (precondition: project rois to feature maps by using conv layer with k^2 * (C + 1) channels where k is the number each ROI divided by and C is the number of classes) abstract information in each bin then all k^2 bins vote for a C+1 channel vector</li>
 </ul>
 <p>Experiment:</p>
 <ul>
-<li>used VGG16 as backbone network</li>
-<li>measured with: pixel accuracy, mean accuracy, mean Intersection over Union, frequency weighted IU, time of inference</li>
-<li>datasets: PASCAL VOC, NYUDv2, SIFT Flow, achieve the state-of-the-art (contrasted to r-cnn, SDS), also with faster inference speed</li>
+<li>used ResNet-101 as backbone network followed by k^2(C+1) channel conv layer</li>
+<li>reduce stride 32-&gt;16 pixel, used dilated conv on conv5</li>
+<li>83.6% mAP PASCAL VOC 2007, 82.0% 2012, test-time 170ms per image</li>
 </ul>
-<p>Pros: end-to-end, could make use of classification nets with little modification on architecture</p>
-<p>Future work:</p>
+<p>Future works:</p>
 <ul>
-<li>some more dedicated way instead of bilinear upsampling</li>
-<li>why add depth information improved insignificant?</li>
+<li>apply extensions of FCNs</li>
 </ul>
 
       
@@ -380,8 +377,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/07/mrl/" rel="next" title="Paper Note of learning to explore for meta RL">
-                <i class="fa fa-chevron-left"></i> Paper Note of learning to explore for meta RL
+              <a href="/2018/05/20/FasterRCNN/" rel="next" title="Paper Note of Faster RCNN">
+                <i class="fa fa-chevron-left"></i> Paper Note of Faster RCNN
               </a>
             
           </div>
@@ -389,10 +386,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/18/lightheadRCNN/" rel="prev" title="Paper Note of lightheadRCNN">
-                Paper Note of lightheadRCNN <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

@@ -252,6 +252,142 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/27/RFCN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunjie Wang (fr42k)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yunjie Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/27/RFCN/" itemprop="url">Paper Note of RFCN</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-27T23:33:42+08:00">
+                2018-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Title: R-FCN: Object Detection via Region-based Fully Convolutional Networks</p>
+<p>Contribution:</p>
+<ul>
+<li>introduce the ROI pooling layer at proper location for share computation</li>
+<li>position sensitive score maps to alleviate the dilemma <code>translation invariance for cls vs translation variance for det</code></li>
+<li>ps roi pooling: (precondition: project rois to feature maps by using conv layer with k^2 * (C + 1) channels where k is the number each ROI divided by and C is the number of classes) abstract information in each bin then all k^2 bins vote for a C+1 channel vector</li>
+</ul>
+<p>Experiment:</p>
+<ul>
+<li>used ResNet-101 as backbone network followed by k^2(C+1) channel conv layer</li>
+<li>reduce stride 32-&gt;16 pixel, used dilated conv on conv5</li>
+<li>83.6% mAP PASCAL VOC 2007, 82.0% 2012, test-time 170ms per image</li>
+</ul>
+<p>Future works:</p>
+<ul>
+<li>apply extensions of FCNs</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/20/FasterRCNN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -341,6 +477,141 @@
 <li>evaluated with different param/structure setting comprehensively (PASCAL VOC/ COCO)</li>
 </ul>
 <p>Pros: end-to-end, provided code &amp; detailed hyper-parameters for reimplement</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/18/lightheadRCNN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunjie Wang (fr42k)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yunjie Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/18/lightheadRCNN/" itemprop="url">Paper Note of lightheadRCNN</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-18T23:33:42+08:00">
+                2018-05-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Title: Light-Head R-CNN: In Defense of Two-Stage Object Detector</p>
+<p>Contribution:</p>
+<ul>
+<li>proposed a 2-stage detector with good accuracy and promising speed compare with single-stage detector</li>
+<li>investigate the problems with Faster-RCNN (global avg pooling harmful for spatial loc with out sharing compution) &amp; RFCN (with a large score map for ROI pooling which is costly)</li>
+<li>proposed thin feature maps for generating small channel ROI feature maps, improving accuracy, save mem/ computation</li>
+<li>detailed hyper-param setting &amp; experiments give strong results, also show techs which improved mAP</li>
+</ul>
+<p>Experiment:</p>
+<ul>
+<li>evaluated on COCO</li>
+<li>adopt dilated conv &amp; OHEM</li>
+<li>R-FCN as baseline</li>
+<li>with ResNet as backbone, achieve 41.5 mmAP</li>
+<li>with Xception achieve 30.7 mmAP, 102 FPS</li>
+</ul>
 
           
         
@@ -871,7 +1142,28 @@
         
           
             <p>Title: Learning Generalized Reactive Policies using Deep Neural Networks</p>
-<p>Idea: 1. Randomly generate problem set, then use off-the-shelf planner to provide plan and trajectory, add observations &amp; actions. Use bootstrap to increase training data. 2. Given the training data, use imitation learing (IL) to learn generated reactive policy (GRP) which represented by deep neural networks. 3. Further more, the GRP can be used as a heuristic function for guided search. 4. leapfrogging, which is use GRP to generate data for learning more complex GRP iteratively.</p>
+<p>Idea:</p>
+<ol>
+<li>Randomly generate problem set, then use off-the-shelf planner to provide plan and trajectory, add observations &amp; actions. Use bootstrap to increase training data.</li>
+<li>Given the training data, use imitation learing (IL) to learn generated reactive policy (GRP) which represented by deep neural networks.</li>
+<li>Further more, the GRP can be used as a heuristic function for guided search.</li>
+<li>leapfrogging, which is use GRP to generate data for learning more complex GRP iteratively.</li>
+</ol>
+<p>Contribution:</p>
+<ul>
+<li>use dl to get GRP, reduce handcraft knowledge/feature</li>
+<li>automatically learn a heuristic function</li>
+<li>the approach could be used in end-to-end system</li>
+</ul>
+<p>Experiments:</p>
+<ul>
+<li>Sokoban<ul>
+<li>9k distinct obstacle * 5 random start/goal locations</li>
+<li>evaluate performance both on test domains of the same size the GRPs were trained on, 99 grids, and<br>larger problems</li>
+</ul>
+</li>
+<li>TSP</li>
+</ul>
 
           
         
@@ -1279,256 +1571,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/VGMM/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yunjie Wang (fr42k)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yunjie Wang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/05/VGMM/" itemprop="url">Paper Note of VGMM</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-05T23:33:42+08:00">
-                2018-04-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Title: Vulnerable GPU Memory Management: Towards Recovering Raw Data from GPU</p>
-<p>Topic: The security issue of Heterogeneous architecture from GPU memory management and algorighm to recover data from residue.</p>
-<p>Idea: Analyze the weakness of HSA data security from GPU perspective, provide an algorighm that could recover image from GPU residue across the multiuser OS and Cloud computing, in 3 steps: get tilt, utilize the local similarity to idetify the size of image and remove leading blocks.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/pps/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yunjie Wang (fr42k)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yunjie Wang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/05/pps/" itemprop="url">Paper Note of PPS</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-05T23:33:42+08:00">
-                2018-04-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Title: Page Placement Strategies for GPUs within Heterogeneous Memory Systems</p>
-<p>Topic: improve page placement performance for GPU in Heterogeneous Memory system</p>
-<p>Idea: proposed bandwidth-aware (BW-AWARE) placement, maximizes GPU throughput by controlling the weights of BO and CO in aggregated memory, and optimize selectively place hot pages in the BO memory when capacity is limited, use profile to augment that provide information about hotness and size of data structures.</p>
-<p>Contribution: a compiler-based GPU page placement solution</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1574,7 +1621,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

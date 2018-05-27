@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Title: Learning Generalized Reactive Policies using Deep Neural Networks Idea: 1. Randomly generate problem set, then use off-the-shelf planner to provide plan and trajectory, add observations &amp;amp; a">
+<meta name="description" content="Title: Learning Generalized Reactive Policies using Deep Neural Networks Idea:  Randomly generate problem set, then use off-the-shelf planner to provide plan and trajectory, add observations &amp;amp; act">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Paper Note of GRP">
 <meta property="og:url" content="http://fr42k.github.io/2018/05/02/grp/index.html">
 <meta property="og:site_name" content="Yunjie Wang">
-<meta property="og:description" content="Title: Learning Generalized Reactive Policies using Deep Neural Networks Idea: 1. Randomly generate problem set, then use off-the-shelf planner to provide plan and trajectory, add observations &amp;amp; a">
+<meta property="og:description" content="Title: Learning Generalized Reactive Policies using Deep Neural Networks Idea:  Randomly generate problem set, then use off-the-shelf planner to provide plan and trajectory, add observations &amp;amp; act">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-05-08T15:41:26.000Z">
+<meta property="og:updated_time" content="2018-05-24T12:51:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Paper Note of GRP">
-<meta name="twitter:description" content="Title: Learning Generalized Reactive Policies using Deep Neural Networks Idea: 1. Randomly generate problem set, then use off-the-shelf planner to provide plan and trajectory, add observations &amp;amp; a">
+<meta name="twitter:description" content="Title: Learning Generalized Reactive Policies using Deep Neural Networks Idea:  Randomly generate problem set, then use off-the-shelf planner to provide plan and trajectory, add observations &amp;amp; act">
 
 
 
@@ -330,7 +330,28 @@
 
       
         <p>Title: Learning Generalized Reactive Policies using Deep Neural Networks</p>
-<p>Idea: 1. Randomly generate problem set, then use off-the-shelf planner to provide plan and trajectory, add observations &amp; actions. Use bootstrap to increase training data. 2. Given the training data, use imitation learing (IL) to learn generated reactive policy (GRP) which represented by deep neural networks. 3. Further more, the GRP can be used as a heuristic function for guided search. 4. leapfrogging, which is use GRP to generate data for learning more complex GRP iteratively.</p>
+<p>Idea:</p>
+<ol>
+<li>Randomly generate problem set, then use off-the-shelf planner to provide plan and trajectory, add observations &amp; actions. Use bootstrap to increase training data.</li>
+<li>Given the training data, use imitation learing (IL) to learn generated reactive policy (GRP) which represented by deep neural networks.</li>
+<li>Further more, the GRP can be used as a heuristic function for guided search.</li>
+<li>leapfrogging, which is use GRP to generate data for learning more complex GRP iteratively.</li>
+</ol>
+<p>Contribution:</p>
+<ul>
+<li>use dl to get GRP, reduce handcraft knowledge/feature</li>
+<li>automatically learn a heuristic function</li>
+<li>the approach could be used in end-to-end system</li>
+</ul>
+<p>Experiments:</p>
+<ul>
+<li>Sokoban<ul>
+<li>9k distinct obstacle * 5 random start/goal locations</li>
+<li>evaluate performance both on test domains of the same size the GRPs were trained on, 99 grids, and<br>larger problems</li>
+</ul>
+</li>
+<li>TSP</li>
+</ul>
 
       
     </div>
@@ -443,7 +464,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
