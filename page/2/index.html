@@ -252,6 +252,130 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/17/GPU_performance_ML/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunjie Wang (fr42k)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yunjie Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/17/GPU_performance_ML/" itemprop="url">Paper Note of GPU Performanc via ML</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-17T23:33:42+08:00">
+                2018-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Title: GPU Performance and Power Estimation Using Machine Learning</p>
+<p>Topic: Using machine learning for GPU performance and power rapid estimation</p>
+<p>Idea: For training: Vary GPU setting from 3 perspective(They use 3 hardware params to illustrate the method, which can also be extend to many params): #compute units(CU),  Mem Freq, Engine Freq to collect performance counters data, use K-means to cluster kernel performance: 1. CU scale, 2. Mem Freq &amp; Engine Freq scale, use neural networks to classify kernel to cluster.<br>or prediction: run kernel on one setting once then classify to pattern cluster, use corresponding cluster centroid scaling values to make predictions on various GPU hardware setting.</p>
+<p>Contribution: demonstrate on real hardware that the performance and power of GPGPU kernels scale in a limited number of ways as hardware configuration parameters are changed(finite unique scaling patterns), perform machine learning to estimate new kernel, describe an estimation model that run a kernel once on a hardware configuration then get performance and power over various configurations</p>
+<p>The result shows that their accuracy is comparable to the accuracy of cycle-level simulators, and on real hardware the trained model runs equal or faster than native programs.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/pps/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -327,6 +451,128 @@
 <p>Topic: improve page placement performance for GPU in Heterogeneous Memory system</p>
 <p>Idea: proposed bandwidth-aware (BW-AWARE) placement, maximizes GPU throughput by controlling the weights of BO and CO in aggregated memory, and optimize selectively place hot pages in the BO memory when capacity is limited, use profile to augment that provide information about hotness and size of data structures.</p>
 <p>Contribution: a compiler-based GPU page placement solution</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/VGMM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunjie Wang (fr42k)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yunjie Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/05/VGMM/" itemprop="url">Paper Note of VGMM</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-05T23:33:42+08:00">
+                2018-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Title: Vulnerable GPU Memory Management: Towards Recovering Raw Data from GPU</p>
+<p>Topic: The security issue of Heterogeneous architecture from GPU memory management and algorighm to recover data from residue.</p>
+<p>Idea: Analyze the weakness of HSA data security from GPU perspective, provide an algorighm that could recover image from GPU residue across the multiuser OS and Cloud computing, in 3 steps: get tilt, utilize the local similarity to idetify the size of image and remove leading blocks.</p>
 
           
         
@@ -451,128 +697,6 @@
 <p>Idea: In Heterogeneous Systems Architecture, the uniform virtual address of GPU/CPU memory can provide programming benefits and need efficient hardware, GPU’s warp-based execution model plays an important role. Using CPU-like MMU design would hurt GPU performance, they explored cache-conscious warp/wavefront scheduling for MMU design and how TLB affects dynamic warp formation. They explored and propose methods in 3 aspects: Address Translation for GPU, Cache Conscious Warp Scheduling, thread block compaction.</p>
 <p>The benefit of their work: remove need of CPU to handle GPU MMU, support multi-context and support application libraries.</p>
 <p>General sight: Default warp scheduling would break temporal locality, sophisticated warp scheduling would loss effectiveness.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/05/VGMM/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yunjie Wang (fr42k)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yunjie Wang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/05/VGMM/" itemprop="url">Paper Note of VGMM</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-05T23:33:42+08:00">
-                2018-04-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Title: Vulnerable GPU Memory Management: Towards Recovering Raw Data from GPU</p>
-<p>Topic: The security issue of Heterogeneous architecture from GPU memory management and algorighm to recover data from residue.</p>
-<p>Idea: Analyze the weakness of HSA data security from GPU perspective, provide an algorighm that could recover image from GPU residue across the multiuser OS and Cloud computing, in 3 steps: get tilt, utilize the local similarity to idetify the size of image and remove leading blocks.</p>
 
           
         
@@ -1364,129 +1488,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2017/10/12/BinarySearchFramework/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yunjie Wang (fr42k)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yunjie Wang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/12/BinarySearchFramework/" itemprop="url">Binary Search Framework</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-12T13:12:44+08:00">
-                2017-10-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Use Binary Search to find the first/last element with a property in a sorted array.</p>
-<p>l: first position in your consideration<br>h: last position in your consideration, even can larger than the last index of the array</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">while (l &lt; h) &#123;</div><div class="line">    // first element</div><div class="line">    m_l = l + (h - l) / 2</div><div class="line">    if (!Satisfy(m_l)) &#123;</div><div class="line">        l = m + 1</div><div class="line">    &#125; else &#123;</div><div class="line">        h = m</div><div class="line">    &#125;</div><div class="line">    /*</div><div class="line">    // last element</div><div class="line">    m_h = l + (h - l) / 2 + 1</div><div class="line">    if (!Satisfy(m_h)) &#123;</div><div class="line">        h = m - 1</div><div class="line">    &#125; else &#123;</div><div class="line">        l = m</div><div class="line">    &#125;</div><div class="line">    */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>The idea is that if the mid point satisfies a property, then keep the opposite bound of round at mid, otherwise move the corresponding bound toward mid exceed 1.<br>Finally its true that <code>l == h</code></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1537,7 +1538,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1550,7 +1551,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

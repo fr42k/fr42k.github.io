@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/27/lightheadRCNN/">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/07/29/linkedListMid/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yunjie Wang (fr42k)">
@@ -271,7 +271,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/27/lightheadRCNN/" itemprop="url">Paper Note of lightheadRCNN</a></h1>
+                <a class="post-title-link" href="/2018/07/29/linkedListMid/" itemprop="url">Find the mid of Linked List</a></h1>
         
 
         <div class="post-meta">
@@ -283,8 +283,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-27T23:33:42+08:00">
-                2018-05-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-29T23:33:42+08:00">
+                2018-07-29
               </time>
             
 
@@ -323,21 +323,12 @@
       
         
           
-            <p>Title: Light-Head R-CNN: In Defense of Two-Stage Object Detector</p>
-<p>Contribution:</p>
+            <p>#<br>We use two pointers to find the mid of linked list named as <code>slow = head</code>, <code>fast = head</code>, given <code>head</code> of the linkedList, now conclude the condition of the while loop </p>
 <ul>
-<li>proposed a 2-stage detector with good accuracy and promising speed compare with single-stage detector</li>
-<li>investigate the problems with Faster-RCNN (global avg pooling harmful for spatial loc with out sharing compution) &amp; RFCN (with a large score map for ROI pooling which is costly)</li>
-<li>proposed thin feature maps for generating small channel ROI feature maps, improving accuracy, save mem/ computation</li>
-<li>detailed hyper-param setting &amp; experiments give strong results, also show techs which improved mAP</li>
-</ul>
-<p>Experiment:</p>
-<ul>
-<li>evaluated on COCO</li>
-<li>adopt dilated conv &amp; OHEM</li>
-<li>R-FCN as baseline</li>
-<li>with ResNet as backbone, achieve 41.5 mmAP</li>
-<li>with Xception achieve 30.7 mmAP, 102 FPS</li>
+<li><p>ceil mid<br><code>fast and fast-&gt;next</code></p>
+</li>
+<li><p>floor mid<br><code>fast-&gt;next and fast-&gt;next-&gt;next</code></p>
+</li>
 </ul>
 
           
@@ -611,6 +602,141 @@
 </ul>
 </li>
 <li>shows ablation experiments and analysis of improvements</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/27/lightheadRCNN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunjie Wang (fr42k)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yunjie Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/27/lightheadRCNN/" itemprop="url">Paper Note of lightheadRCNN</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-27T23:33:42+08:00">
+                2018-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Title: Light-Head R-CNN: In Defense of Two-Stage Object Detector</p>
+<p>Contribution:</p>
+<ul>
+<li>proposed a 2-stage detector with good accuracy and promising speed compare with single-stage detector</li>
+<li>investigate the problems with Faster-RCNN (global avg pooling harmful for spatial loc with out sharing compution) &amp; RFCN (with a large score map for ROI pooling which is costly)</li>
+<li>proposed thin feature maps for generating small channel ROI feature maps, improving accuracy, save mem/ computation</li>
+<li>detailed hyper-param setting &amp; experiments give strong results, also show techs which improved mAP</li>
+</ul>
+<p>Experiment:</p>
+<ul>
+<li>evaluated on COCO</li>
+<li>adopt dilated conv &amp; OHEM</li>
+<li>R-FCN as baseline</li>
+<li>with ResNet as backbone, achieve 41.5 mmAP</li>
+<li>with Xception achieve 30.7 mmAP, 102 FPS</li>
 </ul>
 
           
@@ -1460,130 +1586,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/17/GPU_performance_ML/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yunjie Wang (fr42k)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yunjie Wang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/17/GPU_performance_ML/" itemprop="url">Paper Note of GPU Performanc via ML</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-17T23:33:42+08:00">
-                2018-04-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Title: GPU Performance and Power Estimation Using Machine Learning</p>
-<p>Topic: Using machine learning for GPU performance and power rapid estimation</p>
-<p>Idea: For training: Vary GPU setting from 3 perspective(They use 3 hardware params to illustrate the method, which can also be extend to many params): #compute units(CU),  Mem Freq, Engine Freq to collect performance counters data, use K-means to cluster kernel performance: 1. CU scale, 2. Mem Freq &amp; Engine Freq scale, use neural networks to classify kernel to cluster.<br>or prediction: run kernel on one setting once then classify to pattern cluster, use corresponding cluster centroid scaling values to make predictions on various GPU hardware setting.</p>
-<p>Contribution: demonstrate on real hardware that the performance and power of GPGPU kernels scale in a limited number of ways as hardware configuration parameters are changed(finite unique scaling patterns), perform machine learning to estimate new kernel, describe an estimation model that run a kernel once on a hardware configuration then get performance and power over various configurations</p>
-<p>The result shows that their accuracy is comparable to the accuracy of cycle-level simulators, and on real hardware the trained model runs equal or faster than native programs.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1634,7 +1636,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1647,7 +1649,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
