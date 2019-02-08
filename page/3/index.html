@@ -252,6 +252,132 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/03/20/paperNoteofDeepMon/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunjie Wang (fr42k)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yunjie Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/20/paperNoteofDeepMon/" itemprop="url">Paper Note of DeepMon</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-20T22:32:44-05:00">
+                2018-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Title: DeepMon: Mobile GPU-based Deep Learning Framework for Continuous Vision Applications</p>
+<p>Topic: Reduce deep learning applications’ latency on mobile devices.</p>
+<p>Idea: Utilize GPU of mobile device, convert deep learning model, store metadata on host mem and parameters on device mem, cache first N conv layers’ output and refresh based on a histogram similarity policy, decompose conv parameters from one tensor to 3 small tensors, optimize conv operations via try unfolding &amp; half float, propose multi kernels to fit different mobile GPU.</p>
+<p>Contribution: A toolkit DeepMon that runs deep learning applications on commodity mobile with low latency, implemented with OpenCL and Vulkan</p>
+<p>Intellectual merit: Proposed optimization methods to reduce latency without significantly loss performance, without offload to other powerful servers via server-client mode and save energy.</p>
+<p>Strengths: Detailed observation &amp; experiments on every step. For example when choosing number of bins at caching step, they set a lot of experiments to draw graph to see how the performance change.</p>
+<p>Weakness: No enough guidance for dl developers who wants to make mobile apps: training/testing VGG and YOLO on different datasets</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2017/10/12/BinarySearchFramework/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -283,7 +409,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-12T13:12:44+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-12T13:12:44-05:00">
                 2017-10-12
               </time>
             
@@ -406,7 +532,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-29T17:03:31+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-29T17:03:31-05:00">
                 2017-08-29
               </time>
             
@@ -533,7 +659,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T21:39:15+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-20T21:39:15-05:00">
                 2017-07-20
               </time>
             
@@ -653,7 +779,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-19T07:03:04+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-19T07:03:04-05:00">
                 2017-07-19
               </time>
             
@@ -779,7 +905,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -792,7 +918,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -857,7 +983,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
