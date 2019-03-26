@@ -252,6 +252,132 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2019/03/26/MorrisTraversal/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunjie Wang (fr42k)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yunjie Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/26/MorrisTraversal/" itemprop="url">Morris Traversal for Preorder/Inorder/Postorder</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-26T14:07:44-05:00">
+                2019-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Data structure definition.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Definition for a binary tree node.</div><div class="line"> * struct TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode *left;</div><div class="line"> *     TreeNode *right;</div><div class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</div><div class="line"> * &#125;;</div><div class="line"> */</div></pre></td></tr></table></figure>
+<p>Preorder</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    vector&lt;int&gt; preorderTraversal(TreeNode* root) &#123;</div><div class="line">        vector&lt;int&gt; ans;</div><div class="line">        auto p = root;</div><div class="line">        while (p) &#123;</div><div class="line">            if (!p-&gt;left) &#123;</div><div class="line">                ans.emplace_back(p-&gt;val);</div><div class="line">                p = p-&gt;right;</div><div class="line">            &#125; else &#123;</div><div class="line">                auto prev = p-&gt;left;</div><div class="line">                while (prev-&gt;right and prev-&gt;right != p) &#123;</div><div class="line">                    prev = prev-&gt;right;</div><div class="line">                &#125;</div><div class="line">                if (!prev-&gt;right) &#123;</div><div class="line">                    ans.emplace_back(p-&gt;val);</div><div class="line">                    prev-&gt;right = p;</div><div class="line">                    p = p-&gt;left;</div><div class="line">                &#125; else &#123;</div><div class="line">                    prev-&gt;right = nullptr;</div><div class="line">                    p = p-&gt;right;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return ans;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>Inorder</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;</div><div class="line">        vector&lt;int&gt; ans;</div><div class="line">        auto p = root;</div><div class="line">        while (p) &#123;</div><div class="line">            if (!p-&gt;left) &#123;</div><div class="line">                ans.emplace_back(p-&gt;val);</div><div class="line">                p = p-&gt;right;</div><div class="line">            &#125; else &#123;</div><div class="line">                auto prev = p-&gt;left;</div><div class="line">                while (prev-&gt;right and prev-&gt;right != p) &#123;</div><div class="line">                    prev = prev-&gt;right;</div><div class="line">                &#125;</div><div class="line">                if (!prev-&gt;right) &#123;</div><div class="line">                    prev-&gt;right = p;</div><div class="line">                    p = p-&gt;left;</div><div class="line">                &#125; else &#123;</div><div class="line">                    ans.emplace_back(p-&gt;val);</div><div class="line">                    prev-&gt;right = nullptr;</div><div class="line">                    p = p-&gt;right;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return ans;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>Postorder (The visiting order is a mirror reflection of Preorder, and the results should be reversed)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    vector&lt;int&gt; postorderTraversal(TreeNode* root) &#123;</div><div class="line">        vector&lt;int&gt; ans;</div><div class="line">        auto p = root;</div><div class="line">        while (p) &#123;</div><div class="line">            if (!p-&gt;right) &#123;</div><div class="line">                ans.insert(ans.begin(), p-&gt;val);</div><div class="line">                p = p-&gt;left;</div><div class="line">            &#125; else &#123;</div><div class="line">                auto post = p-&gt;right;</div><div class="line">                while (post-&gt;left and post-&gt;left != p) &#123;</div><div class="line">                    post = post-&gt;left;</div><div class="line">                &#125;</div><div class="line">                if (!post-&gt;left) &#123;</div><div class="line">                    ans.insert(ans.begin(), p-&gt;val);</div><div class="line">                    post-&gt;left = p;</div><div class="line">                    p = p-&gt;right;</div><div class="line">                &#125; else &#123;</div><div class="line">                    post-&gt;left = nullptr;</div><div class="line">                    p = p-&gt;left;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return ans;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/07/29/linkedListMid/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -514,6 +640,141 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/27/lightheadRCNN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunjie Wang (fr42k)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yunjie Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/27/lightheadRCNN/" itemprop="url">Paper Note of lightheadRCNN</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-27T23:33:42-05:00">
+                2018-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Title: Light-Head R-CNN: In Defense of Two-Stage Object Detector</p>
+<p>Contribution:</p>
+<ul>
+<li>proposed a 2-stage detector with good accuracy and promising speed compare with single-stage detector</li>
+<li>investigate the problems with Faster-RCNN (global avg pooling harmful for spatial loc with out sharing compution) &amp; RFCN (with a large score map for ROI pooling which is costly)</li>
+<li>proposed thin feature maps for generating small channel ROI feature maps, improving accuracy, save mem/ computation</li>
+<li>detailed hyper-param setting &amp; experiments give strong results, also show techs which improved mAP</li>
+</ul>
+<p>Experiment:</p>
+<ul>
+<li>evaluated on COCO</li>
+<li>adopt dilated conv &amp; OHEM</li>
+<li>R-FCN as baseline</li>
+<li>with ResNet as backbone, achieve 41.5 mmAP</li>
+<li>with Xception achieve 30.7 mmAP, 102 FPS</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/27/maskRCNN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -602,141 +863,6 @@
 </ul>
 </li>
 <li>shows ablation experiments and analysis of improvements</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/27/lightheadRCNN/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yunjie Wang (fr42k)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yunjie Wang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/27/lightheadRCNN/" itemprop="url">Paper Note of lightheadRCNN</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-27T23:33:42-05:00">
-                2018-05-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Title: Light-Head R-CNN: In Defense of Two-Stage Object Detector</p>
-<p>Contribution:</p>
-<ul>
-<li>proposed a 2-stage detector with good accuracy and promising speed compare with single-stage detector</li>
-<li>investigate the problems with Faster-RCNN (global avg pooling harmful for spatial loc with out sharing compution) &amp; RFCN (with a large score map for ROI pooling which is costly)</li>
-<li>proposed thin feature maps for generating small channel ROI feature maps, improving accuracy, save mem/ computation</li>
-<li>detailed hyper-param setting &amp; experiments give strong results, also show techs which improved mAP</li>
-</ul>
-<p>Experiment:</p>
-<ul>
-<li>evaluated on COCO</li>
-<li>adopt dilated conv &amp; OHEM</li>
-<li>R-FCN as baseline</li>
-<li>with ResNet as backbone, achieve 41.5 mmAP</li>
-<li>with Xception achieve 30.7 mmAP, 102 FPS</li>
 </ul>
 
           
@@ -1462,130 +1588,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/04/19/TOM/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yunjie Wang (fr42k)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yunjie Wang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/19/TOM/" itemprop="url">Paper Note of TOM</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-19T23:33:42-05:00">
-                2018-04-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Title: Transparent Offloading and Mapping (TOM):Enabling Programmer-Transparent Near-Data Processing in GPU Systems</p>
-<p>Topic: Data offloading for multiple 3D memory-stacked GPGPU architechture to alleviate the memory bandwidth bottleneck.</p>
-<p>Idea: alleviate the memory bandwitdh bottleneck mainly by 2 phases: 1) use compiler-based technique to determine potentially offload candidate by calculate the benifit from offload, and make the offload decision at runtime, 2) use a data mapping technique that doesn’t need programmers’ effort by combining both hardware/software then determine the mapping method based on a small period observation using memory access patterns.</p>
-<p>Contribution: 1)propose a new data offloading mechanism that statically identifies instruction blocks benefit from offloading, and dynamically decides whether candidate can be offload in runtime 2) propose a new programmer-transparent data mapping mechanism exploits the predictability in memory access patterns of to co-locate offloaded code and data in the same memory stack 3)comprehensively evaluate the mechanism using 10 memory-intensive GPGPU applications across different system configurations</p>
-<p>The result shows that their mechanism is practical and effective approach to enabling programmer-transparent near-data processing in GPU systems.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1636,7 +1638,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="CV," />
+  <meta name="keywords" content="Algorithm," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Title: Light-Head R-CNN: In Defense of Two-Stage Object Detector Contribution:  proposed a 2-stage detector with good accuracy and promising speed compare with single-stage detector investigate the pr">
-<meta name="keywords" content="CV">
+<meta name="description" content="Data structure definition. 123456789/** * Definition for a binary tree node. * struct TreeNode &amp;#123; *     int val; *     TreeNode *left; *     TreeNode *right; *     TreeNode(int x) : val(x), left(N">
+<meta name="keywords" content="Algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Paper Note of lightheadRCNN">
-<meta property="og:url" content="http://fr42k.github.io/2018/05/18/lightheadRCNN/index.html">
+<meta property="og:title" content="Morris Traversal for Preorder&#x2F;Inorder&#x2F;Postorder">
+<meta property="og:url" content="http://fr42k.github.io/2019/03/26/MorrisTraversal/index.html">
 <meta property="og:site_name" content="Yunjie Wang">
-<meta property="og:description" content="Title: Light-Head R-CNN: In Defense of Two-Stage Object Detector Contribution:  proposed a 2-stage detector with good accuracy and promising speed compare with single-stage detector investigate the pr">
+<meta property="og:description" content="Data structure definition. 123456789/** * Definition for a binary tree node. * struct TreeNode &amp;#123; *     int val; *     TreeNode *left; *     TreeNode *right; *     TreeNode(int x) : val(x), left(N">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-05-27T06:48:01.000Z">
+<meta property="og:updated_time" content="2019-03-26T19:14:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Paper Note of lightheadRCNN">
-<meta name="twitter:description" content="Title: Light-Head R-CNN: In Defense of Two-Stage Object Detector Contribution:  proposed a 2-stage detector with good accuracy and promising speed compare with single-stage detector investigate the pr">
+<meta name="twitter:title" content="Morris Traversal for Preorder&#x2F;Inorder&#x2F;Postorder">
+<meta name="twitter:description" content="Data structure definition. 123456789/** * Definition for a binary tree node. * struct TreeNode &amp;#123; *     int val; *     TreeNode *left; *     TreeNode *right; *     TreeNode(int x) : val(x), left(N">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://fr42k.github.io/2018/05/18/lightheadRCNN/"/>
+  <link rel="canonical" href="http://fr42k.github.io/2019/03/26/MorrisTraversal/"/>
 
 
 
 
 
-  <title>Paper Note of lightheadRCNN | Yunjie Wang</title>
+  <title>Morris Traversal for Preorder/Inorder/Postorder | Yunjie Wang</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/18/lightheadRCNN/">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2019/03/26/MorrisTraversal/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yunjie Wang (fr42k)">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Paper Note of lightheadRCNN</h1>
+          <h1 class="post-title" itemprop="name headline">Morris Traversal for Preorder/Inorder/Postorder</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-18T23:33:42+08:00">
-                2018-05-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-26T14:07:44-05:00">
+                2019-03-26
               </time>
             
 
@@ -301,8 +301,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/18/lightheadRCNN/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/18/lightheadRCNN/" itemprop="commentsCount"></span>
+                <a href="/2019/03/26/MorrisTraversal/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/03/26/MorrisTraversal/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -330,23 +330,14 @@
       
 
       
-        <p>Title: Light-Head R-CNN: In Defense of Two-Stage Object Detector</p>
-<p>Contribution:</p>
-<ul>
-<li>proposed a 2-stage detector with good accuracy and promising speed compare with single-stage detector</li>
-<li>investigate the problems with Faster-RCNN (global avg pooling harmful for spatial loc with out sharing compution) &amp; RFCN (with a large score map for ROI pooling which is costly)</li>
-<li>proposed thin feature maps for generating small channel ROI feature maps, improving accuracy, save mem/ computation</li>
-<li>detailed hyper-param setting &amp; experiments give strong results, also show techs which improved mAP</li>
-</ul>
-<p>Experiment:</p>
-<ul>
-<li>evaluated on COCO</li>
-<li>adopt dilated conv &amp; OHEM</li>
-<li>R-FCN as baseline</li>
-<li>with ResNet as backbone, achieve 41.5 mmAP</li>
-<li>with Xception achieve 30.7 mmAP, 102 FPS</li>
-</ul>
-
+        <p>Data structure definition.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Definition for a binary tree node.</div><div class="line"> * struct TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode *left;</div><div class="line"> *     TreeNode *right;</div><div class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</div><div class="line"> * &#125;;</div><div class="line"> */</div></pre></td></tr></table></figure>
+<p>Preorder</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    vector&lt;int&gt; preorderTraversal(TreeNode* root) &#123;</div><div class="line">        vector&lt;int&gt; ans;</div><div class="line">        auto p = root;</div><div class="line">        while (p) &#123;</div><div class="line">            if (!p-&gt;left) &#123;</div><div class="line">                ans.emplace_back(p-&gt;val);</div><div class="line">                p = p-&gt;right;</div><div class="line">            &#125; else &#123;</div><div class="line">                auto prev = p-&gt;left;</div><div class="line">                while (prev-&gt;right and prev-&gt;right != p) &#123;</div><div class="line">                    prev = prev-&gt;right;</div><div class="line">                &#125;</div><div class="line">                if (!prev-&gt;right) &#123;</div><div class="line">                    ans.emplace_back(p-&gt;val);</div><div class="line">                    prev-&gt;right = p;</div><div class="line">                    p = p-&gt;left;</div><div class="line">                &#125; else &#123;</div><div class="line">                    prev-&gt;right = nullptr;</div><div class="line">                    p = p-&gt;right;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return ans;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>Inorder</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;</div><div class="line">        vector&lt;int&gt; ans;</div><div class="line">        auto p = root;</div><div class="line">        while (p) &#123;</div><div class="line">            if (!p-&gt;left) &#123;</div><div class="line">                ans.emplace_back(p-&gt;val);</div><div class="line">                p = p-&gt;right;</div><div class="line">            &#125; else &#123;</div><div class="line">                auto prev = p-&gt;left;</div><div class="line">                while (prev-&gt;right and prev-&gt;right != p) &#123;</div><div class="line">                    prev = prev-&gt;right;</div><div class="line">                &#125;</div><div class="line">                if (!prev-&gt;right) &#123;</div><div class="line">                    prev-&gt;right = p;</div><div class="line">                    p = p-&gt;left;</div><div class="line">                &#125; else &#123;</div><div class="line">                    ans.emplace_back(p-&gt;val);</div><div class="line">                    prev-&gt;right = nullptr;</div><div class="line">                    p = p-&gt;right;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return ans;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>Postorder (The visiting order is a mirror reflection of Preorder, and the results should be reversed)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    vector&lt;int&gt; postorderTraversal(TreeNode* root) &#123;</div><div class="line">        vector&lt;int&gt; ans;</div><div class="line">        auto p = root;</div><div class="line">        while (p) &#123;</div><div class="line">            if (!p-&gt;right) &#123;</div><div class="line">                ans.insert(ans.begin(), p-&gt;val);</div><div class="line">                p = p-&gt;left;</div><div class="line">            &#125; else &#123;</div><div class="line">                auto post = p-&gt;right;</div><div class="line">                while (post-&gt;left and post-&gt;left != p) &#123;</div><div class="line">                    post = post-&gt;left;</div><div class="line">                &#125;</div><div class="line">                if (!post-&gt;left) &#123;</div><div class="line">                    ans.insert(ans.begin(), p-&gt;val);</div><div class="line">                    post-&gt;left = p;</div><div class="line">                    p = p-&gt;right;</div><div class="line">                &#125; else &#123;</div><div class="line">                    post-&gt;left = nullptr;</div><div class="line">                    p = p-&gt;left;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return ans;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -363,7 +354,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CV/" rel="tag"># CV</a>
+            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
           
         </div>
       
@@ -376,8 +367,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/18/FCN/" rel="next" title="Paper Note of FCN">
-                <i class="fa fa-chevron-left"></i> Paper Note of FCN
+              <a href="/2018/07/29/linkedListMid/" rel="next" title="Find the mid of Linked List">
+                <i class="fa fa-chevron-left"></i> Find the mid of Linked List
               </a>
             
           </div>
@@ -385,10 +376,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/20/FasterRCNN/" rel="prev" title="Paper Note of Faster RCNN">
-                Paper Note of Faster RCNN <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -464,7 +451,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -477,7 +464,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -542,7 +529,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
