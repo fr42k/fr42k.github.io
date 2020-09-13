@@ -252,6 +252,156 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/03/cpwithco/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yunjie Wang (fr42k)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yunjie Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/cpwithco/" itemprop="url">Paper Note of Classical Planners for Tasks with Continuous Operators</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-03T23:33:42-07:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Title: Using Classical Planners for Tasks with Continuous Operators in Robotics</p>
+<p>Idea:</p>
+<ul>
+<li>Provide an algorithm for high-level planning which utilized classic planners and low-level executing:<ul>
+<li>Use Skolem symbols to instead continuous operators for high-level, discrete planning,</li>
+<li>use sampling to estimate the values of Skolem symbols and RRT-based techniques to implement movements representing each action in the plan.</li>
+<li>get error message from low level then return to high level planner to refine</li>
+</ul>
+</li>
+</ul>
+<p>Contribution:</p>
+<ul>
+<li>provides a method for synchronizing between continuous and discrete planning layers</li>
+<li>utilize classical planner when facts and operator effects over continuous variables are not available a priori</li>
+</ul>
+<p>Experiment:</p>
+<ul>
+<li>simulated using OpenRave</li>
+<li>Pick and Place Scenario:<ul>
+<li>planner: FastForward (well-established)</li>
+<li>30 tests over 3 randomly generated environments</li>
+<li>80 to 130 configurations</li>
+<li>the total average time is far less than the precomp-methods, and needs acceptable re-plan</li>
+</ul>
+</li>
+<li>Dining Table Set-Up Scenario<ul>
+<li>planner: FastDownward (cost-sensitive)</li>
+<li>required 230s, including execution</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/05/02/grp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -283,7 +433,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-02T23:33:42-05:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-02T23:33:42-07:00">
                 2018-05-02
               </time>
             
@@ -425,7 +575,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-19T23:33:42-05:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-19T23:33:42-07:00">
                 2018-04-19
               </time>
             
@@ -549,7 +699,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-17T23:33:42-05:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-17T23:33:42-07:00">
                 2018-04-17
               </time>
             
@@ -673,7 +823,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-05T23:33:42-05:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-05T23:33:42-07:00">
                 2018-04-05
               </time>
             
@@ -797,7 +947,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-05T23:33:42-05:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-05T23:33:42-07:00">
                 2018-04-05
               </time>
             
@@ -919,7 +1069,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-05T23:33:42-05:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-05T23:33:42-07:00">
                 2018-04-05
               </time>
             
@@ -1042,7 +1192,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-30T02:35:42-05:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-30T02:35:42-07:00">
                 2018-03-30
               </time>
             
@@ -1168,7 +1318,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-29T10:14:07-05:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-29T10:14:07-07:00">
                 2018-03-29
               </time>
             
@@ -1294,7 +1444,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-29T10:14:07-05:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-29T10:14:07-07:00">
                 2018-03-29
               </time>
             
@@ -1335,132 +1485,6 @@
         
           
             <p>%matplotlib inline<br>%config InlineBackend.figure_format = ‘retina’</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fr42k.github.io/2018/03/28/gscale/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yunjie Wang (fr42k)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yunjie Wang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/28/gscale/" itemprop="url">Paper Note of gScale</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-28T23:33:42-05:00">
-                2018-03-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Title: gScale: Scaling up GPU Virtualization with Dynamic Sharing of Graphics Memory Space</p>
-<p>Topic: a state of art solution about improve the scaling ability of GPU Virtualization</p>
-<p>Idea: analyze the bottleneck of gVirt that fixed size resource partition limits the vGPU instances, based on gVirt, come up with the idea that give each vGPU a private shadow graphics translation table (GTT) to share the high physical graphic memory and synchronize only when the instance is rendering and use on-demand copy to reduce cost, share the low graphic memory by using Extended Page Table (EPT) to establish a mapping relation from guest physical address and host physical address then link those directly so that CPU can access the host memory without using global graphic memory, use a part of low graphic memory and apply dynamic management to serve fence register, divide the high graphic memory to slots which can be shared by vGPU and avoid context switch for idle vGPU to handle many vGPU.</p>
-<p>Contribution: an open-source GPU Virtualization solution that can reach the state of the art standar</p>
-<p>Intellectual merit: a private shadow GTT to share high graphic memory, a mechanism named ladder mapping to share low graphic memory, use fence memory space pool to solve the invalid fence register problem caused by ladder mapping, and use slot sharing to reduce cost when launched many vGPU</p>
-<p>Strengths: clear logic that analyze the bottleneck of gVirt and give improve ideas step by step</p>
-<p>Weakness: not so clearly illustrate the ladder mapping idea via example</p>
 
           
         
@@ -1546,7 +1570,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1624,7 +1648,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
